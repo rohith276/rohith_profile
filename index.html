@@ -5,25 +5,32 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rohith Bhupathi — Full-Stack Developer & Creative Engineer</title>
-  <meta name="description" content="Portfolio of Rohith Bhupathi — Full-Stack Developer, UI/UX Designer, and Creative Engineer specializing in React, Node.js, and modern web technologies." />
+  <meta name="description"
+    content="Portfolio of Rohith Bhupathi — Full-Stack Developer, UI/UX Designer, and Creative Engineer specializing in React, Node.js, and modern web technologies." />
   <meta name="author" content="Rohith Bhupathi" />
-  <meta name="keywords" content="Rohith Bhupathi, Full-Stack Developer, React Developer, Portfolio, Web Developer, UI/UX Designer, SRM University" />
+  <meta name="keywords"
+    content="Rohith Bhupathi, Full-Stack Developer, React Developer, Portfolio, Web Developer, UI/UX Designer, SRM University" />
   <!-- OG Meta -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://rohith276.github.io/rohith_profile/" />
   <meta property="og:title" content="Rohith Bhupathi — Full-Stack Developer & Creative Engineer" />
-  <meta property="og:description" content="Full-stack developer with a passion for building production-ready applications, crafting pixel-perfect UIs, and solving complex problems." />
+  <meta property="og:description"
+    content="Full-stack developer with a passion for building production-ready applications, crafting pixel-perfect UIs, and solving complex problems." />
   <meta property="og:image" content="https://rohith276.github.io/rohith_profile/Rohith.png" />
   <!-- Twitter Meta -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Rohith Bhupathi — Full-Stack Developer" />
-  <meta name="twitter:description" content="Full-stack developer crafting pixel-perfect UIs and production-ready applications." />
+  <meta name="twitter:description"
+    content="Full-stack developer crafting pixel-perfect UIs and production-ready applications." />
   <meta name="twitter:image" content="https://rohith276.github.io/rohith_profile/Rohith.png" />
-  <link rel="icon" type="image/png" href="Rohith.png" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' x='50%' text-anchor='middle' font-family='sans-serif' font-weight='800' font-size='80' fill='%2300d4ff'>r.</text></svg>" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';</script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollToPlugin.min.js"></script>
   <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
 
@@ -55,17 +62,19 @@
   <nav class="navbar" id="navbar">
     <a href="#hero" class="nav-logo">rohith.</a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="#hero" class="active">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#education">Education</a></li>
-      <li><a href="#certifications">Certs</a></li>
-      <li><a href="#achievements">More</a></li>
-      <li><a href="#contact">Contact</a></li>
+      <li><a href="#hero" class="active" data-en="Home" data-jp="ホーム">Home</a></li>
+      <li><a href="#about" data-en="About" data-jp="自己紹介">About</a></li>
+      <li><a href="#skills" data-en="Skills" data-jp="スキル">Skills</a></li>
+      <li><a href="#projects" data-en="Projects" data-jp="プロジェクト">Projects</a></li>
+      <li><a href="#education" data-en="Education" data-jp="学歴">Education</a></li>
+      <li><a href="#certifications" data-en="Certs" data-jp="資格">Certs</a></li>
+      <li><a href="#documents" data-en="Docs" data-jp="書類">Docs</a></li>
+      <li><a href="#achievements" data-en="More" data-jp="More">More</a></li>
+      <li><a href="#contact" data-en="Contact" data-jp="連絡先">Contact</a></li>
     </ul>
-    <button class="lang-toggle" id="langToggle" title="Switch to Japanese">
-      <span class="lang-flag">🇬🇧</span><span class="lang-text">EN</span>
+    <button class="lang-toggle" id="langToggle" title="Switch Language">
+      <span class="lang-opt">EN</span>
+      <span class="lang-opt">JP</span>
     </button>
     <div class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
@@ -84,16 +93,26 @@
 
     <div class="hero-content">
       <div class="hero-text">
-        <div class="hero-badge" data-en="Open to Opportunities" data-jp="募集中"><span class="dot"></span> Open to Opportunities</div>
-        <h1>Hi, I'm<br><span class="gradient-text scramble-text" id="heroName">Rohith Bhupathi</span></h1>
+        <div class="hero-badge" data-en="Open to Opportunities" data-jp="募集中"><span class="dot"></span> Open to
+          Opportunities</div>
+        <h1><span id="heroGreeting" data-en="Hi, I'm" data-jp="こんにちは、">Hi, I'm</span><br><span
+            class="gradient-text scramble-text" id="heroName">Rohith Bhupathi</span><span id="heroSuffix" data-en=""
+            data-jp="です"></span></h1>
         <p class="subtitle"><span id="typedText"></span><span class="cursor-blink">|</span></p>
-        <p class="hero-description" data-en="Full-stack developer with a passion for building production-ready applications, crafting pixel-perfect UIs, and solving complex problems with clean, maintainable code." data-jp="プロダクション対応のアプリケーション構築、ピクセルパーフェクトなUI作成、クリーンで保守性の高いコードによる複雑な問題解決に情熱を持つフルスタック開発者。">Full-stack developer with a passion for building production-ready applications, crafting pixel-perfect UIs, and solving complex problems with clean, maintainable code.</p>
+        <p class="hero-description"
+          data-en="Full-stack developer with a passion for building production-ready applications, crafting pixel-perfect UIs, and solving complex problems with clean, maintainable code."
+          data-jp="プロダクション対応のアプリケーション構築、ピクセルパーフェクトなUI作成、クリーンで保守性の高いコードによる複雑な問題解決に情熱を持つフルスタック開発者。">Full-stack developer
+          with a passion for building production-ready applications, crafting pixel-perfect UIs, and solving complex
+          problems with clean, maintainable code.</p>
         <div class="hero-buttons">
-          <a href="Rohith-EN-Resume.pdf" download class="btn btn-primary" data-magnetic><i class="bx bx-download"></i> Download Resume</a>
-          <a href="#contact" class="btn btn-outline" data-magnetic data-en="Let's Talk" data-jp="お問い合わせ"><i class="bx bx-chat"></i> Let's Talk</a>
+          <a href="#documents" class="btn btn-primary" data-magnetic><i class="bx bx-show"></i>
+            View Resume/CV</a>
+          <a href="#contact" class="btn btn-outline" data-magnetic data-en="Let's Talk" data-jp="お問い合わせ"><i
+              class="bx bx-chat"></i> Let's Talk</a>
         </div>
         <div class="hero-socials">
-          <a href="https://linkedin.com/in/rohith-bhupathi" target="_blank" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+          <a href="https://linkedin.com/in/rohith-bhupathi" target="_blank" aria-label="LinkedIn"><i
+              class="bx bxl-linkedin-square"></i></a>
           <a href="https://github.com/rohith276" target="_blank" aria-label="GitHub"><i class="bx bxl-github"></i></a>
           <a href="mailto:rohithbhupathi27@gmail.com" aria-label="Email"><i class="bx bx-envelope"></i></a>
           <a href="https://wa.me/919603174184" target="_blank" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
@@ -136,65 +155,79 @@
   <!-- ===== ABOUT ===== -->
   <section class="section" id="about">
     <div class="section-header">
-      <p class="section-label">About Me</p>
-      <h2 class="section-title" data-split>Who I Am</h2>
-      <p class="section-subtitle">A creative engineer who loves turning ideas into impactful digital experiences.</p>
+      <p class="section-label" data-en="About Me" data-jp="自己紹介">About Me</p>
+      <h2 class="section-title" data-en="Who I Am" data-jp="私について">Who I Am</h2>
+      <p class="section-subtitle"
+        data-en="A creative engineer who loves turning ideas into impactful digital experiences."
+        data-jp="アイデアをインパクトのあるデジタル体験に変えることが大好きなクリエイティブエンジニア。">A creative engineer who loves turning ideas into impactful
+        digital experiences.</p>
     </div>
     <div class="about-grid">
-      <div class="about-text reveal">
+      <div class="about-text reveal" id="aboutText1"
+        data-en="I'm a final-year &lt;strong&gt;Computer Science &amp; Engineering&lt;/strong&gt; student specializing in &lt;strong&gt;Big Data Analytics&lt;/strong&gt; at &lt;strong&gt;SRM University AP&lt;/strong&gt;. I bring strong foundations in full-stack web development, a demonstrated ability to architect and ship production-ready applications, and a genuine passion for building software that makes a meaningful difference."
+        data-jp="私は&lt;strong&gt;SRM大学AP校&lt;/strong&gt;の&lt;strong&gt;コンピュータサイエンス＆エンジニアリング&lt;/strong&gt;専攻の最終学年で、&lt;strong&gt;ビッグデータ分析&lt;/strong&gt;を専門としています。フルスタックWeb開発の強固な基盤と、本稼働向けアプリケーションの設計・構築の実績、そして社会的意義のあるソフトウェア開発への情熱を持っています。">
         <p>I'm a final-year <strong>Computer Science & Engineering</strong> student specializing in <strong>Big Data
             Analytics</strong> at <strong>SRM University AP</strong>. I bring strong foundations in full-stack web
           development, a demonstrated ability to architect and ship production-ready applications, and a genuine passion
           for building software that makes a meaningful difference.</p>
+      </div>
+      <div class="about-text reveal" style="margin-top:-20px" id="aboutText2"
+        data-en="Beyond development, I'm deeply interested in &lt;strong&gt;UI/UX Design&lt;/strong&gt;, &lt;strong&gt;3D modeling with Blender&lt;/strong&gt;, and &lt;strong&gt;Japanese language &amp; culture&lt;/strong&gt; (JLPT N4 certified). I thrive at the intersection of engineering and creativity."
+        data-jp="開発にとどまらず、&lt;strong&gt;UI/UXデザイン&lt;/strong&gt;、&lt;strong&gt;Blenderでの3Dモデリング&lt;/strong&gt;、そして&lt;strong&gt;日本の言語と文化&lt;/strong&gt;（JLPT N4取得）にも深い関心があります。エンジニアリングとクリエイティビティの交差する領域で力を発揮します。">
         <p>Beyond development, I'm deeply interested in <strong>UI/UX Design</strong>, <strong>3D modeling with
             Blender</strong>, and <strong>Japanese language & culture</strong> (JLPT N4 certified). I thrive at the
           intersection of engineering and creativity.</p>
-        <div class="about-stats">
-          <div class="stat-card">
-            <div class="stat-number" data-count="5">0</div>
-            <div class="stat-label">Projects Built</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-count="8">0</div>
-            <div class="stat-label">Technologies</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-count="3">0</div>
-            <div class="stat-label">Certifications</div>
-          </div>
-          <div class="stat-card">
-            <div class="stat-number" data-count="6">0</div>
-            <div class="stat-label">Achievements</div>
-          </div>
-        </div>
       </div>
-      <div class="about-info-cards reveal-right">
-        <div class="info-card">
-          <div class="info-card-icon cyan"><i class="bx bx-user"></i></div>
-          <div class="info-card-text">
-            <h4>Rohith Bhupathi 【ロヒト】</h4>
-            <p>Born Oct 15, 2004 · Andhra Pradesh, India</p>
+      <div class="about-content-split reveal">
+        <div class="about-stats-side">
+          <div class="stat-card" data-magnetic>
+            <div class="stat-number" data-count="5">0</div>
+            <div class="stat-label" data-en="Projects Built" data-jp="構築したプロジェクト">Projects Built</div>
+          </div>
+          <div class="stat-card" data-magnetic>
+            <div class="stat-number" data-count="8">0</div>
+            <div class="stat-label" data-en="Technologies" data-jp="使用技術数">Technologies</div>
+          </div>
+          <div class="stat-card" data-magnetic>
+            <div class="stat-number" data-count="3">0</div>
+            <div class="stat-label" data-en="Certifications" data-jp="取得資格">Certifications</div>
+          </div>
+          <div class="stat-card" data-magnetic>
+            <div class="stat-number" data-count="6">0</div>
+            <div class="stat-label" data-en="Achievements" data-jp="実績">Achievements</div>
           </div>
         </div>
-        <div class="info-card">
-          <div class="info-card-icon violet"><i class="bx bx-code-alt"></i></div>
-          <div class="info-card-text">
-            <h4>Full-Stack Developer</h4>
-            <p>React · Node.js · MongoDB · PostgreSQL</p>
+
+        <div class="about-info-side">
+          <div class="info-card" data-magnetic>
+            <div class="info-card-icon cyan"><i class="bx bx-user"></i></div>
+            <div class="info-card-text">
+              <h4 data-en="Rohith Bhupathi 【ロヒト】" data-jp="ロヒト・ブパティ">Rohith Bhupathi 【ロヒト】</h4>
+              <p data-en="Born Oct 15, 2004 · Andhra Pradesh, India" data-jp="2004年10月15日生 · インド、アーンドラ・プラデーシュ州">Born Oct
+                15, 2004 · Andhra Pradesh, India</p>
+            </div>
           </div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-icon pink"><i class="bx bx-palette"></i></div>
-          <div class="info-card-text">
-            <h4>UI/UX & 3D Designer</h4>
-            <p>Figma · Blender · Creative Problem Solving</p>
+          <div class="info-card" data-magnetic>
+            <div class="info-card-icon violet"><i class="bx bx-code-alt"></i></div>
+            <div class="info-card-text">
+              <h4 data-en="Full-Stack Developer" data-jp="フルスタック開発者">Full-Stack Developer</h4>
+              <p>React · Node.js · MongoDB · PostgreSQL</p>
+            </div>
           </div>
-        </div>
-        <div class="info-card">
-          <div class="info-card-icon blue"><i class="bx bx-world"></i></div>
-          <div class="info-card-text">
-            <h4>Languages</h4>
-            <p>English (Fluent) · 日本語 (JLPT N4) · Telugu (Native)</p>
+          <div class="info-card" data-magnetic>
+            <div class="info-card-icon pink"><i class="bx bx-palette"></i></div>
+            <div class="info-card-text">
+              <h4 data-en="UI/UX & 3D Designer" data-jp="UI/UX & 3Dデザイナー">UI/UX & 3D Designer</h4>
+              <p>Figma · Blender · Creative Problem Solving</p>
+            </div>
+          </div>
+          <div class="info-card" data-magnetic>
+            <div class="info-card-icon blue"><i class="bx bx-world"></i></div>
+            <div class="info-card-text">
+              <h4 data-en="Languages" data-jp="対応言語">Languages</h4>
+              <p data-en="English (Fluent) · 日本語 (JLPT N4) · Telugu (Native)"
+                data-jp="英語 (流暢) · 日本語 (JLPT N4) · テルグ語 (母国語)">English (Fluent) · 日本語 (JLPT N4) · Telugu (Native)</p>
+            </div>
           </div>
         </div>
       </div>
@@ -204,13 +237,15 @@
   <!-- ===== SKILLS ===== -->
   <section class="section" id="skills">
     <div class="section-header">
-      <p class="section-label">Technical Arsenal</p>
-      <h2 class="section-title" data-split>Skills & Expertise</h2>
-      <p class="section-subtitle">Technologies I've worked with and proficiency levels.</p>
+      <p class="section-label" data-en="Technical Arsenal" data-jp="技術スキル">Technical Arsenal</p>
+      <h2 class="section-title" data-en="Skills & Expertise" data-jp="スキルと専門知識">Skills & Expertise</h2>
+      <p class="section-subtitle" data-en="Technologies I've worked with and proficiency levels." data-jp="使用した技術と習熟度。">
+        Technologies I've worked with and proficiency levels.</p>
     </div>
     <div class="skills-grid">
       <div class="skill-category reveal">
-        <h3 class="skill-category-title"><i class="bx bx-code-curly"></i> Frontend Development</h3>
+        <h3 class="skill-category-title" data-en="Frontend Development" data-jp="フロントエンド開発"><i
+            class="bx bx-code-curly"></i> Frontend Development</h3>
         <div class="skill-item"><span class="skill-name">React.js</span>
           <div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span>
         </div>
@@ -225,7 +260,8 @@
             class="tech-tag"><i class="bx bxl-javascript"></i> JS</span></div>
       </div>
       <div class="skill-category reveal">
-        <h3 class="skill-category-title"><i class="bx bx-server"></i> Backend & Databases</h3>
+        <h3 class="skill-category-title" data-en="Backend & Databases" data-jp="バックエンド & データベース"><i
+            class="bx bx-server"></i> Backend & Databases</h3>
         <div class="skill-item"><span class="skill-name">Node.js / Express</span>
           <div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span>
         </div>
@@ -240,7 +276,8 @@
               class="bx bxs-data"></i> PostgreSQL</span></div>
       </div>
       <div class="skill-category reveal">
-        <h3 class="skill-category-title"><i class="bx bx-brush-alt"></i> Design & Tools</h3>
+        <h3 class="skill-category-title" data-en="Design & Tools" data-jp="デザイン & ツール"><i class="bx bx-brush-alt"></i>
+          Design & Tools</h3>
         <div class="skill-item"><span class="skill-name">Figma / UI-UX</span>
           <div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span>
         </div>
@@ -254,7 +291,8 @@
               class="bx bx-cube"></i> Blender</span><span class="tech-tag"><i class="bx bxl-git"></i> Git</span></div>
       </div>
       <div class="skill-category reveal">
-        <h3 class="skill-category-title"><i class="bx bx-brain"></i> Languages & ML</h3>
+        <h3 class="skill-category-title" data-en="Languages & ML" data-jp="言語 & 機械学習"><i class="bx bx-brain"></i>
+          Languages & ML</h3>
         <div class="skill-item"><span class="skill-name">C / C++</span>
           <div class="rating-gems" data-rating="8"></div><span class="rating-value">8/10</span>
         </div>
@@ -274,9 +312,16 @@
   <!-- ===== PROJECTS (HORIZONTAL SCROLL) ===== -->
   <section class="section horizontal-section" id="projects">
     <div class="section-header">
-      <p class="section-label">Featured Work</p>
-      <h2 class="section-title" data-split>Projects</h2>
-      <p class="section-subtitle">Real-world applications I've designed, built, and deployed.</p>
+      <p class="section-label" data-en="Featured Work" data-jp="注目のプロジェクト">Featured Work</p>
+      <h2 class="section-title" data-en="Projects" data-jp="プロジェクト一覧">Projects</h2>
+      <p class="section-subtitle" data-en="Real-world applications I've designed, built, and deployed."
+        data-jp="これまでに設計、構築、デプロイした実用的なアプリケーション。">Real-world applications I've designed, built, and deployed.</p>
+    </div>
+    <div class="project-nav">
+      <button id="prevProject" class="project-nav-btn prev" aria-label="Previous Project" data-magnetic><i
+          class="bx bx-chevron-left"></i></button>
+      <button id="nextProject" class="project-nav-btn next" aria-label="Next Project" data-magnetic><i
+          class="bx bx-chevron-right"></i></button>
     </div>
     <div class="horizontal-track" id="horizontalTrack">
       <!-- Project 1 -->
@@ -284,14 +329,16 @@
         <div class="project-header">
           <div class="project-icon"><i class="bx bx-book-reader"></i></div>
           <div class="project-links">
-            <a href="https://github.com/rohith276" target="_blank" title="Code"><i class="bx bx-link-external"></i></a>
-            <a href="#" title="Demo"><i class="bx bx-play-circle"></i></a>
+            <a href="https://acadify-demo.vercel.app" title="Demo"><i class="bx bx-link-external"></i></a>
           </div>
         </div>
-        <h3>AcadSify</h3>
-        <span class="project-date">Dec 2025</span>
-        <p>University academic project management system centralizing student group formation, milestone tracking, and
-          automated grade computation based on faculty and peer reviews. Actively used within the institution.</p>
+        <h3 data-en="AcadSify SaaS" data-jp="AcadSify 学術SaaS">AcadSify</h3>
+        <span class="project-date" data-en="Dec 2025" data-jp="2025年12月">Dec 2025</span>
+        <p data-en="A comprehensive Academic SaaS platform that centralizes student group formation, milestone tracking, and automated grade computation. Built with React/Vite, Laravel, and PostgreSQL, it ensures efficient, transparent project management for university ecosystems."
+          data-jp="React/Vite、Laravel、PostgreSQLで構築された包括的な学術情報用SaaSプラットフォーム。学生のグループ編成、マイルストーン追跡、自動成績計算を一元化し、大学エコシステム向けの効率的で透明性の高いプロジェクト管理を実現します。">
+          A comprehensive Academic SaaS platform that centralizes student group formation, milestone tracking, and
+          automated grade computation. Built with React/Vite, Laravel, and PostgreSQL, it ensures efficient, transparent
+          project management for university ecosystems.</p>
         <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Node.js</span><span
             class="project-tag">MongoDB</span><span class="project-tag">Tailwind</span><span
             class="project-tag">DaisyUI</span></div>
@@ -300,13 +347,16 @@
       <div class="project-card">
         <div class="project-header">
           <div class="project-icon"><i class="bx bx-line-chart"></i></div>
-          <div class="project-links"><a href="https://github.com/rohith276" target="_blank"><i
+          <div class="project-links"><a href="https://father-app.vercel.app" target="_blank"><i
                 class="bx bx-link-external"></i></a></div>
         </div>
-        <h3>Father-App Dashboard</h3>
-        <span class="project-date">Mar–May 2024</span>
-        <p>Secure admin dashboard with real-time analytics and data visualization. Features role-based authentication,
-          order/user/payment management, and streamlined data workflows.</p>
+        <h3 data-en="Father-App SaaS" data-jp="Father-App SaaS Eコマース">Father-App Dashboard</h3>
+        <span class="project-date" data-en="Mar–May 2024" data-jp="2024年3月–5月">Mar–May 2024</span>
+        <p data-en="A full-stack SaaS e-commerce management application featuring a powerful admin dashboard, real-time analytics, and automated data workflows. Built with MERN stack, it provides secure, role-based authentication and end-to-end management for users, orders, and payments."
+          data-jp="MERNスタックで構築されたフルスタックEコマース管理SaaSアプリ。強力な管理ダッシュボード、リアルタイム分析、自動化されたデータワークフローを搭載。安全なロールベース認証により、ユーザー、注文、支払いのエンドツーエンド管理を提供します。">
+          A full-stack SaaS e-commerce management application featuring a powerful admin dashboard, real-time analytics,
+          and automated data workflows. Built with MERN stack, it provides secure, role-based authentication and
+          end-to-end management for users, orders, and payments.</p>
         <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Node.js</span><span
             class="project-tag">MongoDB</span><span class="project-tag">DaisyUI</span></div>
       </div>
@@ -314,12 +364,12 @@
       <div class="project-card">
         <div class="project-header">
           <div class="project-icon"><i class="bx bx-brain"></i></div>
-          <div class="project-links"><a href="https://github.com/rohith276" target="_blank"><i
-                class="bx bx-link-external"></i></a></div>
         </div>
-        <h3>ResNet Satellite Classification</h3>
-        <span class="project-date">2024</span>
-        <p>Deep learning research applying residual neural networks (ResNet) to satellite image classification tasks.
+        <h3 data-en="ResNet Satellite Classification" data-jp="ResNet 衛星画像分類">ResNet Satellite Classification</h3>
+        <span class="project-date" data-en="2024" data-jp="2024年">2024</span>
+        <p data-en="Deep learning research applying residual neural networks (ResNet) to satellite image classification tasks. Explored transfer learning and data augmentation techniques."
+          data-jp="残差ニューラルネットワーク（ResNet）を衛星画像分類に適用する深層学習の研究。転移学習およびデータ拡張技術を活用。">Deep learning research applying residual
+          neural networks (ResNet) to satellite image classification tasks.
           Explored transfer learning and data augmentation techniques.</p>
         <div class="project-tags"><span class="project-tag">Python</span><span
             class="project-tag">TensorFlow</span><span class="project-tag">ResNet</span><span class="project-tag">Deep
@@ -329,12 +379,15 @@
       <div class="project-card">
         <div class="project-header">
           <div class="project-icon"><i class="bx bx-mobile-alt"></i></div>
-          <div class="project-links"><a href="https://github.com/rohith276" target="_blank"><i
-                class="bx bx-link-external"></i></a></div>
+          <div class="project-links"><a
+              href="https://www.figma.com/team_invite/redeem/ccWkCHqt8Y0KPTRwKy02J5?t=FxGyOQLDnGl7HgyD-21"
+              target="_blank"><i class="bx bx-link-external"></i></a></div>
         </div>
-        <h3>MyAPSSDC UI/UX</h3>
-        <span class="project-date">2023</span>
-        <p>Complete UI/UX redesign and landing page development for an Andhra Pradesh skill development platform,
+        <h3 data-en="MyAPSSDC UI/UX" data-jp="MyAPSSDC UI/UX デザイン">MyAPSSDC UI/UX</h3>
+        <span class="project-date" data-en="2023" data-jp="2023年">2023</span>
+        <p data-en="Complete UI/UX redesign and landing page development for an Andhra Pradesh skill development platform, focusing on accessibility, mobile-first design, and user engagement."
+          data-jp="アーンドラ・プラデーシュ州のスキル開発プラットフォーム向けの包括的なUI/UX再設計とLP開発。アクセシビリティ、モバイルファースト設計、ユーザー行動に注力。">Complete UI/UX
+          redesign and landing page development for an Andhra Pradesh skill development platform,
           focusing on accessibility, mobile-first design, and user engagement.</p>
         <div class="project-tags"><span class="project-tag">Figma</span><span class="project-tag">HTML/CSS</span><span
             class="project-tag">UI/UX</span><span class="project-tag">Responsive</span></div>
@@ -345,45 +398,53 @@
   <!-- ===== EDUCATION ===== -->
   <section class="section" id="education">
     <div class="section-header">
-      <p class="section-label">Education</p>
-      <h2 class="section-title" data-split>Academic Journey</h2>
-      <p class="section-subtitle">My path through academia and continuous learning.</p>
+      <p class="section-label" data-en="Education" data-jp="学歴">Education</p>
+      <h2 class="section-title" data-en="Academic Journey" data-jp="学びの道">Academic Journey</h2>
+      <p class="section-subtitle" data-en="My path through academia and continuous learning." data-jp="学術と継続的学習の軌跡。">My
+        path through academia and continuous learning.</p>
     </div>
     <div class="timeline">
       <div class="timeline-item reveal">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <span class="timeline-year">2022 — 2026 (Expected)</span>
-          <h3>B.Tech in Computer Science & Engineering</h3>
-          <h4>SRM University AP, Amaravathi — Big Data Analytics</h4>
-          <span class="grade">CGPA: 7.57 / 10</span>
+          <span class="timeline-year" data-en="2022 — 2026 (Expected)" data-jp="2022年 — 2026年 (見込み)">2022 — 2026
+            (Expected)</span>
+          <h3 data-en="B.Tech in Computer Science & Engineering" data-jp="コンピュータサイエンス・エンジニアリング 学士">B.Tech in Computer
+            Science & Engineering</h3>
+          <h4 data-en="SRM University AP, Amaravathi — Big Data Analytics" data-jp="SRM大学AP校（アマラヴァティ）— ビッグデータ分析専攻">SRM
+            University AP, Amaravathi — Big Data Analytics</h4>
+          <span class="grade" data-en="CGPA: 7.57 / 10" data-jp="CGPA: 7.57 / 10">CGPA: 7.57 / 10</span>
         </div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <span class="timeline-year">2020 — 2022</span>
-          <h3>Intermediate (MPC)</h3>
-          <h4>Sri Vishwashaanti Junior College, Vuyyuru</h4>
-          <span class="grade">889 / 1000 Marks (88.9%)</span>
+          <span class="timeline-year" data-en="2020 — 2022" data-jp="2020年 — 2022年">2020 — 2022</span>
+          <h3 data-en="Intermediate (MPC)" data-jp="理数系 高等学校">Intermediate (MPC)</h3>
+          <h4 data-en="Sri Vishwashaanti Junior College, Vuyyuru" data-jp="スリ・ヴィシュワシャンティ・ジュニア・カレッジ">Sri Vishwashaanti
+            Junior College, Vuyyuru</h4>
+          <span class="grade" data-en="889 / 1000 Marks (88.9%)" data-jp="889 / 1000 点 (88.9%)">889 / 1000 Marks
+            (88.9%)</span>
         </div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <span class="timeline-year">2019 — 2020</span>
-          <h3>SSC (10th Grade)</h3>
-          <h4>SRM High School</h4>
-          <span class="grade">582 / 600 Marks (GPA 9.70)</span>
+          <span class="timeline-year" data-en="2019 — 2020" data-jp="2019年 — 2020年">2019 — 2020</span>
+          <h3 data-en="SSC (10th Grade)" data-jp="中学修了（10年生）">SSC (10th Grade)</h3>
+          <h4 data-en="SRM High School" data-jp="SRM高校">SRM High School</h4>
+          <span class="grade" data-en="582 / 600 Marks (GPA 9.70)" data-jp="582 / 600 点 (GPA 9.70)">582 / 600 Marks (GPA
+            9.70)</span>
         </div>
       </div>
       <div class="timeline-item reveal">
         <div class="timeline-dot"></div>
         <div class="timeline-content">
-          <span class="timeline-year">2017 — 2019</span>
-          <h3>Primary & Middle School</h3>
-          <h4>SRM High School</h4>
-          <span class="grade">Distinction — Top of Class</span>
+          <span class="timeline-year" data-en="2017 — 2019" data-jp="2017年 — 2019年">2017 — 2019</span>
+          <h3 data-en="Primary & Middle School" data-jp="小学校・中学校">Primary & Middle School</h3>
+          <h4 data-en="SRM High School" data-jp="SRM高校">SRM High School</h4>
+          <span class="grade" data-en="Distinction — Top of Class" data-jp="優秀賞 — クラス首席">Distinction — Top of
+            Class</span>
         </div>
       </div>
     </div>
@@ -392,33 +453,41 @@
   <!-- ===== CERTIFICATIONS ===== -->
   <section class="section" id="certifications">
     <div class="section-header">
-      <p class="section-label">Certifications</p>
-      <h2 class="section-title" data-split>Credentials</h2>
-      <p class="section-subtitle">Validated skills and professional development milestones.</p>
+      <p class="section-label" data-en="Certifications" data-jp="資格">Certifications</p>
+      <h2 class="section-title" data-en="Credentials" data-jp="資格証明">Credentials</h2>
+      <p class="section-subtitle" data-en="Validated skills and professional development milestones."
+        data-jp="検証されたスキルと専門能力。">Validated skills and professional development milestones.</p>
     </div>
     <div class="certs-grid">
       <div class="cert-card reveal">
         <div class="cert-icon green"><i class="bx bxs-certification"></i></div>
         <div class="cert-content">
-          <h3>MongoDB Node.js Developer Path</h3>
-          <p>Completed the official MongoDB learning path for Node.js developers.</p><span class="cert-id">MongoDB
+          <h3 data-en="MongoDB Node.js Developer Path" data-jp="MongoDB Node.js 開発者パス">MongoDB Node.js Developer Path
+          </h3>
+          <p data-en="Completed the official MongoDB learning path for Node.js developers."
+            data-jp="Node.js開発者向けの公式MongoDB学習パスを完了。">Completed the official MongoDB learning path for Node.js
+            developers.</p><span class="cert-id">MongoDB
             University</span>
         </div>
       </div>
       <div class="cert-card reveal">
         <div class="cert-icon purple"><i class="bx bxs-brain"></i></div>
         <div class="cert-content">
-          <h3>ChatGPT for Everyone</h3>
-          <p>Understanding and effectively utilizing AI-driven tools for productivity and dev workflows.</p><span
-            class="cert-id">Online Certification</span>
+          <h3 data-en="ChatGPT for Everyone" data-jp="すべての人のためのChatGPT">ChatGPT for Everyone</h3>
+          <p data-en="Understanding and effectively utilizing AI-driven tools for productivity and dev workflows."
+            data-jp="生産性と開発ワークフロー向上のためのAIツールの理解と効果的な活用。">Understanding and effectively utilizing AI-driven tools for
+            productivity and dev workflows.</p><span class="cert-id" data-en="Online Certification"
+            data-jp="オンライン認定証">Online Certification</span>
         </div>
       </div>
       <div class="cert-card reveal">
         <div class="cert-icon orange"><i class="bx bxl-figma"></i></div>
         <div class="cert-content">
-          <h3>Figma Basics</h3>
-          <p>Foundation in UI/UX design using Figma — components, prototyping, auto-layout.</p><span
-            class="cert-id">Online Certification</span>
+          <h3 data-en="Figma Basics" data-jp="Figma 基礎">Figma Basics</h3>
+          <p data-en="Foundation in UI/UX design using Figma — components, prototyping, auto-layout."
+            data-jp="Figmaを使用したUI/UXデザインの基礎 — コンポーネント、プロトタイピング、オートレイアウト。">Foundation in UI/UX design using Figma —
+            components, prototyping, auto-layout.</p><span class="cert-id" data-en="Online Certification"
+            data-jp="オンライン認定証">Online Certification</span>
         </div>
       </div>
     </div>
@@ -427,51 +496,147 @@
   <!-- ===== ACHIEVEMENTS ===== -->
   <section class="section" id="achievements">
     <div class="section-header">
-      <p class="section-label">Highlights</p>
-      <h2 class="section-title" data-split>Achievements</h2>
-      <p class="section-subtitle">Milestones that shaped my journey.</p>
+      <p class="section-label" data-en="Highlights" data-jp="ハイライト">Highlights</p>
+      <h2 class="section-title" data-en="Achievements" data-jp="実績">Achievements</h2>
+      <p class="section-subtitle" data-en="Milestones that shaped my journey." data-jp="私の成長を形作ったマイルストーン。">Milestones
+        that shaped my journey.</p>
     </div>
     <div class="achievements-grid">
-      <div class="achievement-card reveal"><span class="achievement-emoji">🏆</span><span
-          class="achievement-year">2024</span>
-        <h3>UX Design Challenge — Top 3</h3>
-        <p>Placed in the top 3 in a university-level UX design sprint and challenge event.</p>
+      <div class="achievement-card reveal"><span class="achievement-emoji">🏆</span><span class="achievement-year"
+          data-en="2024" data-jp="2024年">2024</span>
+        <h3 data-en="UX Design Challenge — Top 3" data-jp="UXデザインチャレンジ — トップ3">UX Design Challenge — Top 3</h3>
+        <p data-en="Placed in the top 3 in a university-level UX design sprint and challenge event."
+          data-jp="大学規模のUXデザインスプリントおよびチャレンジイベントで上位3位に入賞。">Placed in the top 3 in a university-level UX design sprint and
+          challenge event.</p>
       </div>
-      <div class="achievement-card reveal"><span class="achievement-emoji">🎓</span><span
-          class="achievement-year">2024</span>
-        <h3>Full-Stack Workshop Lead</h3>
-        <p>Organized and led a hands-on workshop on full-stack development for peers.</p>
+      <div class="achievement-card reveal"><span class="achievement-emoji">🎓</span><span class="achievement-year"
+          data-en="2024" data-jp="2024年">2024</span>
+        <h3 data-en="Full-Stack Workshop Lead" data-jp="フルスタックワークショップ リーダー">Full-Stack Workshop Lead</h3>
+        <p data-en="Organized and led a hands-on workshop on full-stack development for peers."
+          data-jp="同級生向けにフルスタック開発の実践的なワークショップを企画・指導。">Organized and led a hands-on workshop on full-stack development
+          for peers.</p>
       </div>
-      <div class="achievement-card reveal"><span class="achievement-emoji">📖</span><span
-          class="achievement-year">2023</span>
-        <h3>Published Telugu Poetry Book</h3>
-        <p>Authored and published a Telugu poetry collection — bridging tech and the arts.</p>
+      <div class="achievement-card reveal"><span class="achievement-emoji">📖</span><span class="achievement-year"
+          data-en="2023" data-jp="2023年">2023</span>
+        <h3 data-en="Published Telugu Poetry Book" data-jp="テルグ語詩集を出版">Published Telugu Poetry Book</h3>
+        <p data-en="Authored and published a Telugu poetry collection — bridging tech and the arts."
+          data-jp="テクノロジーと芸術の架け橋となるテルグ語の詩集を執筆・出版。">Authored and published a Telugu poetry collection — bridging tech and
+          the arts.</p>
       </div>
-      <div class="achievement-card reveal"><span class="achievement-emoji">🇯🇵</span><span
-          class="achievement-year">2024</span>
-        <h3>JLPT N4 Certification</h3>
-        <p>Passed the Japanese Language Proficiency Test at N4 level, demonstrating dedication to cross-cultural
+      <div class="achievement-card reveal"><span class="achievement-emoji">🇯🇵</span><span class="achievement-year"
+          data-en="2024" data-jp="2024年">2024</span>
+        <h3 data-en="JLPT N4 Certification" data-jp="JLPT N4 資格取得">JLPT N4 Certification</h3>
+        <p data-en="Passed the Japanese Language Proficiency Test at N4 level, demonstrating dedication to cross-cultural learning."
+          data-jp="異文化学習への熱意を示し、日本語能力試験N4レベルに合格。">Passed the Japanese Language Proficiency Test at N4 level,
+          demonstrating dedication to cross-cultural
           learning.</p>
       </div>
-      <div class="achievement-card reveal"><span class="achievement-emoji">🎨</span><span
-          class="achievement-year">2023–24</span>
-        <h3>Design Sprint Awards</h3>
-        <p>Multiple recognitions in university design sprints for innovative UI/UX solutions.</p>
+      <div class="achievement-card reveal"><span class="achievement-emoji">🎨</span><span class="achievement-year"
+          data-en="2023–24" data-jp="2023年–24年">2023–24</span>
+        <h3 data-en="Design Sprint Awards" data-jp="デザインスプリント賞">Design Sprint Awards</h3>
+        <p data-en="Multiple recognitions in university design sprints for innovative UI/UX solutions."
+          data-jp="革新的なUI/UXソリューションにより、大学のデザインスプリントで複数の表彰を受賞。">Multiple recognitions in university design sprints for
+          innovative UI/UX solutions.</p>
       </div>
-      <div class="achievement-card reveal"><span class="achievement-emoji">🤝</span><span
-          class="achievement-year">Ongoing</span>
-        <h3>Soft Skills & Leadership</h3>
-        <p>Consistently recognized for effective communication, team collaboration, and initiative.</p>
+      <div class="achievement-card reveal"><span class="achievement-emoji">🤝</span><span class="achievement-year"
+          data-en="Ongoing" data-jp="継続中">Ongoing</span>
+        <h3 data-en="Soft Skills & Leadership" data-jp="ソフトスキルとリーダーシップ">Soft Skills & Leadership</h3>
+        <p data-en="Consistently recognized for effective communication, team collaboration, and initiative."
+          data-jp="効果的なコミュニケーション、チームコラボレーション、主導性で常に高く評価されています。">Consistently recognized for effective communication,
+          team collaboration, and initiative.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- ===== DOCUMENTS ===== -->
+  <section class="section" id="documents">
+    <div class="section-header">
+      <p class="section-label" data-en="Resumes & Certs" data-jp="履歴書と資格">Resumes & Certs</p>
+      <h2 class="section-title" data-split data-en="Professional Documents" data-jp="プロフェッショナルな書類">Professional
+        Documents</h2>
+      <p class="section-subtitle"
+        data-en="View and download my professional resumes, cover letters, and language certifications."
+        data-jp="私のプロフェッショナルな履歴書、志望動機書、語学資格証明書を閲覧・ダウンロードできます。">View and download my professional resumes, cover letters,
+        and language certifications.</p>
+    </div>
+    <div class="documents-grid reveal">
+
+      <div class="doc-card" data-magnetic>
+        <div class="doc-icon"><i class="bx bxs-file-pdf"></i></div>
+        <div class="doc-info">
+          <h4 data-en="Resume (EN)" data-jp="履歴書 (EN)">Resume (EN)</h4>
+          <p data-en="English Version" data-jp="英語版">English Version</p>
+        </div>
+        <div class="doc-actions">
+          <button class="doc-btn view" onclick="openPDF('Rohith-EN-Resume.pdf')"><i class="bx bx-show"></i></button>
+          <a href="Rohith-EN-Resume.pdf" download class="doc-btn dl" title="Download"><i class="bx bx-download"></i></a>
+        </div>
+      </div>
+
+      <div class="doc-card" data-magnetic>
+        <div class="doc-icon"><i class="bx bxs-file-pdf"></i></div>
+        <div class="doc-info">
+          <h4 data-en="履歴書 (JP)" data-jp="履歴書 (JP)">履歴書 (JP)</h4>
+          <p data-en="Japanese Version" data-jp="日本語版">Japanese Version</p>
+        </div>
+        <div class="doc-actions">
+          <button class="doc-btn view" onclick="openPDF('Rohith-JP-Resume.pdf')"><i class="bx bx-show"></i></button>
+          <a href="Rohith-JP-Resume.pdf" download class="doc-btn dl" title="Download"><i class="bx bx-download"></i></a>
+        </div>
+      </div>
+
+      <div class="doc-card" data-magnetic>
+        <div class="doc-icon"><i class="bx bxs-file-pdf"></i></div>
+        <div class="doc-info">
+          <h4 data-en="Cover Letter (EN)" data-jp="志望動機書 (EN)">Cover Letter (EN)</h4>
+          <p data-en="English Version" data-jp="英語版">English Version</p>
+        </div>
+        <div class="doc-actions">
+          <button class="doc-btn view" onclick="openPDF('CoverLetter_EN_Rohith.pdf')"><i
+              class="bx bx-show"></i></button>
+          <a href="CoverLetter_EN_Rohith.pdf" download class="doc-btn dl" title="Download"><i
+              class="bx bx-download"></i></a>
+        </div>
+      </div>
+
+      <div class="doc-card" data-magnetic>
+        <div class="doc-icon"><i class="bx bxs-file-pdf"></i></div>
+        <div class="doc-info">
+          <h4 data-en="志望動機書 (JP)" data-jp="志望動機書 (JP)">志望動機書 (JP)</h4>
+          <p data-en="Japanese Version" data-jp="日本語版">Japanese Version</p>
+        </div>
+        <div class="doc-actions">
+          <button class="doc-btn view" onclick="openPDF('CoverLetter_JP_Rohith.pdf')"><i
+              class="bx bx-show"></i></button>
+          <a href="CoverLetter_JP_Rohith.pdf" download class="doc-btn dl" title="Download"><i
+              class="bx bx-download"></i></a>
+        </div>
+      </div>
+
+      <div class="doc-card" data-magnetic>
+        <div class="doc-icon jp-icon"><i class="bx bx-certification"></i></div>
+        <div class="doc-info">
+          <h4 data-en="JLPT N4 Certificate" data-jp="JLPT N4 証明書">JLPT N4 Certificate</h4>
+          <p data-en="Language Proficiency" data-jp="語学能力">Language Proficiency</p>
+        </div>
+        <div class="doc-actions">
+          <button class="doc-btn view" onclick="openPDF('N4_Certificate_Rohith.pdf')"><i
+              class="bx bx-show"></i></button>
+          <a href="N4_Certificate_Rohith.pdf" download class="doc-btn dl" title="Download"><i
+              class="bx bx-download"></i></a>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ===== CONTACT ===== -->
   <section class="section" id="contact">
     <div class="section-header">
-      <p class="section-label">Get in Touch</p>
-      <h2 class="section-title" data-split>Let's Connect</h2>
-      <p class="section-subtitle">Have a project in mind or just want to say hello?</p>
+      <p class="section-label" data-en="Get in Touch" data-jp="お問い合わせ">Get in Touch</p>
+      <h2 class="section-title" data-en="Let's Connect" data-jp="つながりましょう">Let's Connect</h2>
+      <p class="section-subtitle" data-en="Have a project in mind or just want to say hello?"
+        data-jp="プロジェクトのご相談やお気軽にご連絡ください。">Have a project in mind or just want to say hello?</p>
     </div>
     <div class="contact-container">
       <div class="contact-info reveal-left">
@@ -496,31 +661,28 @@
             <p>Rohith Bhupathi</p>
           </div>
         </a>
-        <div class="resume-downloads">
-          <h4 data-en="📄 View & Download Documents" data-jp="📄 書類の閲覧・ダウンロード">📄 View & Download Documents</h4>
-          <div class="download-links">
-            <button class="download-link" onclick="openPDF('Rohith-EN-Resume.pdf')"><i class="bx bx-show"></i> Resume (EN)</button>
-            <a href="Rohith-EN-Resume.pdf" download class="download-link"><i class="bx bx-download"></i> ⬇</a>
-            <button class="download-link" onclick="openPDF('Rohith-JP-Resume.pdf')"><i class="bx bx-show"></i> 履歴書 (JP)</button>
-            <a href="Rohith-JP-Resume.pdf" download class="download-link"><i class="bx bx-download"></i> ⬇</a>
-            <button class="download-link" onclick="openPDF('CoverLetter_EN_Rohith.pdf')"><i class="bx bx-show"></i> Cover Letter</button>
-            <a href="CoverLetter_EN_Rohith.pdf" download class="download-link"><i class="bx bx-download"></i> ⬇</a>
-            <button class="download-link" onclick="openPDF('CoverLetter_JP_Rohith.pdf')"><i class="bx bx-show"></i> 志望動機書</button>
-            <a href="CoverLetter_JP_Rohith.pdf" download class="download-link"><i class="bx bx-download"></i> ⬇</a>
-            <button class="download-link" onclick="openPDF('N4_Certificate_Rohith.pdf')"><i class="bx bx-show"></i> JLPT N4 Certificate</button>
-            <a href="N4_Certificate_Rohith.pdf" download class="download-link"><i class="bx bx-download"></i> ⬇</a>
-          </div>
-        </div>
       </div>
       <form class="contact-form reveal-right" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
-        <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name"
-            placeholder="John Doe" required /></div>
-        <div class="form-group"><label for="email">Your Email</label><input type="email" id="email" name="email"
-            placeholder="john@example.com" required /></div>
-        <div class="form-group"><label for="message">Your Message</label><textarea id="message" name="message" rows="5"
-            placeholder="Tell me about your project..." required></textarea></div>
-        <button type="submit" class="submit-btn" data-magnetic><i class="bx bx-send"></i> Send Message</button>
+        <div class="form-group">
+          <label for="name" data-en="Your Name" data-jp="お名前">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="John Doe" data-en-placeholder="John Doe"
+            data-jp-placeholder="ジョン・ドウ" required />
+        </div>
+        <div class="form-group">
+          <label for="email" data-en="Your Email" data-jp="メールアドレス">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="john@example.com"
+            data-en-placeholder="john@example.com" data-jp-placeholder="john@example.jp" required />
+        </div>
+        <div class="form-group">
+          <label for="message" data-en="Your Message" data-jp="メッセージ">Your Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+            data-en-placeholder="Tell me about your project..." data-jp-placeholder="プロジェクトについて教えてください..."
+            required></textarea>
+        </div>
+        <button type="submit" class="submit-btn" data-en="Send Message" data-jp="メッセージを送信" data-magnetic>
+          <i class="bx bx-send"></i> Send Message
+        </button>
       </form>
     </div>
   </section>
@@ -530,14 +692,16 @@
     <div class="visitor-counter">
       <i class="bx bx-show"></i>
       <span class="visitor-count-number" id="visitorCount">...</span>
-      <span class="visitor-label">Total Portfolio Views</span>
+      <span class="visitor-label" data-en="Total Portfolio Views" data-jp="ポートフォリオ総閲覧数">Total Portfolio Views</span>
     </div>
   </section>
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="footer-left">
-      <p>© 2026 <span>Rohith Bhupathi</span>. Crafted with passion.</p>
+      <p data-en="© 2026 &lt;span&gt;Rohith Bhupathi&lt;/span&gt;. Crafted with passion."
+        data-jp="© 2026 &lt;span&gt;ロヒト・ブパティ&lt;/span&gt;。情熱を込めて制作。">© 2026 <span>Rohith Bhupathi</span>. Crafted with
+        passion.</p>
     </div>
     <div class="footer-socials">
       <a href="https://linkedin.com/in/rohith-bhupathi" target="_blank"><i class="bx bxl-linkedin-square"></i></a>
@@ -548,14 +712,16 @@
 
   <!-- PDF Viewer Modal -->
   <div class="pdf-modal" id="pdfModal">
-    <div class="pdf-modal-header">
-      <span class="pdf-title" id="pdfTitle">Document</span>
-      <div class="pdf-modal-actions">
-        <a id="pdfDownload" href="#" download class="pdf-dl-btn"><i class="bx bx-download"></i> Download</a>
-        <button class="pdf-close-btn" onclick="closePDF()"><i class="bx bx-x"></i></button>
+    <div class="pdf-modal-content">
+      <div class="pdf-modal-header">
+        <span class="pdf-title" id="pdfTitle">Document</span>
+        <div class="pdf-modal-actions">
+          <a id="pdfDownload" href="#" download class="pdf-dl-btn"><i class="bx bx-download"></i> Download</a>
+          <button class="pdf-close-btn" onclick="closePDF()"><i class="bx bx-x"></i></button>
+        </div>
       </div>
+      <div id="pdfContainer" class="pdf-container"></div>
     </div>
-    <iframe id="pdfFrame" class="pdf-iframe"></iframe>
   </div>
 
   <!-- Back to Top -->
@@ -567,12 +733,6 @@
   <script>
     (function () {
       'use strict';
-
-      /* ─── LENIS SMOOTH SCROLL ─── */
-      const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => lenis.raf(time * 1000));
-      gsap.ticker.lagSmoothing(0);
 
       /* ─── REGISTER SCROLLTRIGGER ─── */
       gsap.registerPlugin(ScrollTrigger);
@@ -640,7 +800,13 @@
       }
       const heroName = document.getElementById('heroName');
       const scramble = new TextScramble(heroName);
-      setTimeout(() => scramble.setText('Rohith Bhupathi'), 500);
+
+      window.updateScramble = function () {
+        const isJP = document.documentElement.lang === 'ja';
+        const nameToScramble = isJP ? 'ロヒト・ブパティ' : 'Rohith Bhupathi';
+        scramble.setText(nameToScramble);
+      };
+      setTimeout(window.updateScramble, 500);
 
       /* ─── TYPING EFFECT ─── */
       const roles = ['Full-Stack Developer', 'Creative Engineer', 'UI/UX Designer', '3D Enthusiast', '日本語学習中 🇯🇵', 'Problem Solver'];
@@ -769,16 +935,48 @@
 
       // Horizontal scroll for projects
       const hTrack = document.getElementById('horizontalTrack');
+      let projectsST;
       if (hTrack && window.innerWidth > 768) {
-        gsap.to(hTrack, {
-          x: () => -(hTrack.scrollWidth - window.innerWidth + 100),
-          ease: 'none',
-          scrollTrigger: {
-            trigger: '.horizontal-section', pin: true, scrub: 1,
-            end: () => '+=' + (hTrack.scrollWidth - window.innerWidth + 200),
-            invalidateOnRefresh: true
-          }
+        projectsST = ScrollTrigger.create({
+          trigger: '.horizontal-section',
+          pin: true,
+          scrub: 1,
+          end: () => '+=' + (hTrack.scrollWidth - window.innerWidth + 200),
+          animation: gsap.to(hTrack, {
+            x: () => -(hTrack.scrollWidth - window.innerWidth + 100),
+            ease: 'none'
+          }),
+          invalidateOnRefresh: true
         });
+
+        // Project Nav Logic
+        const nextBtn = document.getElementById('nextProject');
+        const prevBtn = document.getElementById('prevProject');
+        const cards = document.querySelectorAll('.project-card');
+
+        if (nextBtn && prevBtn && cards.length > 0) {
+          const jumpToProject = (direction) => {
+            const currentPos = window.scrollY;
+            const start = projectsST.start;
+            const end = projectsST.end;
+            const totalWidth = hTrack.scrollWidth - window.innerWidth + 100;
+            const cardWidth = totalWidth / (cards.length - 1);
+
+            // Current progress (0 to 1)
+            const progress = (currentPos - start) / (end - start);
+            const currentIndex = Math.round(progress * (cards.length - 1));
+
+            let targetIndex = currentIndex + direction;
+            if (targetIndex < 0) targetIndex = 0;
+            if (targetIndex >= cards.length) targetIndex = cards.length - 1;
+
+            const targetScroll = start + (targetIndex / (cards.length - 1)) * (end - start);
+            gsap.to(window, { scrollTo: { y: targetScroll, autoKill: false }, duration: 1, ease: 'power2.inOut' });
+          };
+
+          nextBtn.addEventListener('click', () => jumpToProject(1));
+          prevBtn.addEventListener('click', () => jumpToProject(-1));
+        }
       }
 
       /* ─── NAVBAR SCROLL + PROGRESS ─── */
@@ -792,7 +990,7 @@
         progressBar.style.width = (scrollTop / docHeight * 100) + '%';
         backBtn.classList.toggle('show', scrollTop > 600);
       });
-      backBtn.addEventListener('click', () => lenis.scrollTo(0));
+      backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
       /* ─── SCROLL SPY ─── */
       const sections = document.querySelectorAll('section[id]');
@@ -840,33 +1038,86 @@
         }
       })();
 
+      /* ─── CONTACT FORM AJAX ─── */
+      const contactForm = document.querySelector('.contact-form');
+      if (contactForm) {
+        contactForm.addEventListener('submit', async function (e) {
+          e.preventDefault();
+          const btn = this.querySelector('.submit-btn');
+          const originalBtnHtml = btn.innerHTML;
+          const isJP = document.documentElement.lang === 'ja';
+
+          // Clear previous status
+          let statusBox = this.querySelector('.form-status');
+          if (!statusBox) {
+            statusBox = document.createElement('div');
+            statusBox.className = 'form-status';
+            this.appendChild(statusBox);
+          }
+          statusBox.textContent = '';
+          statusBox.className = 'form-status';
+
+          // Loading state
+          btn.disabled = true;
+          btn.innerHTML = `<i class='bx bx-loader-alt bx-spin'></i> ${isJP ? '送信中...' : 'Sending...'}`;
+
+          try {
+            const formData = new FormData(this);
+            const response = await fetch(this.action, {
+              method: 'POST',
+              body: formData,
+              headers: { 'Accept': 'application/json' }
+            });
+
+            if (response.ok) {
+              statusBox.textContent = isJP ? 'メッセージが送信されました！' : 'Message sent successfully!';
+              statusBox.classList.add('success');
+              this.reset();
+            } else {
+              throw new Error();
+            }
+          } catch (err) {
+            statusBox.textContent = isJP ? 'エラーが発生しました。後でもう一度お試しください。' : 'Something went wrong. Please try again later.';
+            statusBox.classList.add('error');
+          } finally {
+            btn.disabled = false;
+            btn.innerHTML = originalBtnHtml;
+            setTimeout(() => { if (statusBox) statusBox.classList.remove('success', 'error'); }, 5000);
+          }
+        });
+      }
+
       /* ─── ANIMATED COMPANION (Morphing Orb) ─── */
       const companion = document.getElementById('companion');
       const companionLabel = document.getElementById('companionLabel');
-      if (companion && window.innerWidth > 768) {
+      if (companion) {
         const companionStates = [
-          { id: 'hero', state: 'wave', label: 'Hey there!' },
-          { id: 'about', state: 'curious', label: 'That\'s me!' },
-          { id: 'skills', state: 'flex', label: 'My skills!' },
-          { id: 'projects', state: 'rocket', label: 'Cool stuff!' },
-          { id: 'education', state: 'study', label: 'Learning!' },
-          { id: 'certifications', state: 'check', label: 'Certified!' },
-          { id: 'achievements', state: 'trophy', label: 'Proud!' },
-          { id: 'contact', state: 'chat', label: 'Let\'s talk!' }
+          { id: 'hero', state: 'wave', en: 'Hey there!', jp: 'やあ、こんにちは！' },
+          { id: 'about', state: 'curious', en: 'That\'s me!', jp: 'それが私です！' },
+          { id: 'skills', state: 'flex', en: 'My skills!', jp: '私のスキルです！' },
+          { id: 'projects', state: 'rocket', en: 'Cool stuff!', jp: '制作物を見てね！' },
+          { id: 'education', state: 'study', en: 'Learning!', jp: '勉強中です！' },
+          { id: 'certifications', state: 'check', en: 'Certified!', jp: '資格持ってるよ！' },
+          { id: 'achievements', state: 'trophy', en: 'Proud!', jp: '実績はこちら！' },
+          { id: 'contact', state: 'chat', en: 'Let\'s talk!', jp: 'お話しましょう！' }
         ];
         let currentState = 'wave';
-        function setCompanionState(state, label) {
+        function setCompanionState(state, labels) {
+          const isJP = document.documentElement.lang === 'ja';
           companion.className = 'companion state-' + state;
-          companionLabel.textContent = label;
+          companionLabel.textContent = isJP ? labels.jp : labels.en;
           companion.classList.add('bounce');
           setTimeout(() => companion.classList.remove('bounce'), 500);
           currentState = state;
+          companion.dataset.currentEn = labels.en;
+          companion.dataset.currentJp = labels.jp;
         }
+
         companionStates.forEach(s => {
           ScrollTrigger.create({
             trigger: '#' + s.id, start: 'top center',
-            onEnter: () => setCompanionState(s.state, s.label),
-            onEnterBack: () => setCompanionState(s.state, s.label)
+            onEnter: () => setCompanionState(s.state, { en: s.en, jp: s.jp }),
+            onEnterBack: () => setCompanionState(s.state, { en: s.en, jp: s.jp })
           });
         });
         // Mouse tracking
@@ -876,34 +1127,55 @@
           companion.style.setProperty('--tx', x + 'px');
           companion.style.setProperty('--ty', y + 'px');
         });
-      } else if (companion) { companion.style.display = 'none'; }
+      }
 
     })();
 
     /* ─── PDF VIEWER ─── */
-    function openPDF(url) {
+    async function openPDF(url) {
       const modal = document.getElementById('pdfModal');
-      const frame = document.getElementById('pdfFrame');
+      const container = document.getElementById('pdfContainer');
       const title = document.getElementById('pdfTitle');
       const dl = document.getElementById('pdfDownload');
-      frame.src = url;
-      title.textContent = url.replace('.pdf','').replace(/_/g,' ');
+
+      container.innerHTML = '<p style="color:white; margin:20px;">Loading document...</p>';
+      title.textContent = url.replace('.pdf', '').replace(/_/g, ' ');
       dl.href = url;
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
+
+      try {
+        const loadingTask = pdfjsLib.getDocument(url);
+        const pdf = await loadingTask.promise;
+        container.innerHTML = '';
+
+        for (let pageNum = 1; pageNum <= pdf.numPages; pageNum++) {
+          const page = await pdf.getPage(pageNum);
+          const viewport = page.getViewport({ scale: 1.5 });
+          const canvas = document.createElement('canvas');
+          const context = canvas.getContext('2d');
+          canvas.height = viewport.height;
+          canvas.width = viewport.width;
+
+          container.appendChild(canvas);
+          await page.render({ canvasContext: context, viewport: viewport }).promise;
+        }
+      } catch (err) {
+        container.innerHTML = `<p style="color:#ef4444; margin:20px;">Error loading PDF: ${err.message}</p>`;
+      }
     }
     function closePDF() {
       const modal = document.getElementById('pdfModal');
-      document.getElementById('pdfFrame').src = '';
+      document.getElementById('pdfContainer').innerHTML = '';
       modal.classList.remove('open');
       document.body.style.overflow = '';
     }
-    document.getElementById('pdfModal').addEventListener('click', function(e) {
+    document.getElementById('pdfModal').addEventListener('click', function (e) {
       if (e.target === this) closePDF();
     });
 
     /* ─── EN/JP LANGUAGE TOGGLE ─── */
-    (function() {
+    (function () {
       const translations = {
         // Section labels
         'About Me': '自己紹介',
@@ -952,19 +1224,46 @@
 
       toggle.addEventListener('click', () => {
         isJP = !isJP;
-        toggle.querySelector('.lang-flag').textContent = isJP ? '🇯🇵' : '🇬🇧';
-        toggle.querySelector('.lang-text').textContent = isJP ? 'JP' : 'EN';
+        toggle.classList.toggle('is-jp', isJP);
         toggle.title = isJP ? 'Switch to English' : 'Switch to Japanese';
         document.documentElement.lang = isJP ? 'ja' : 'en';
+        if (window.updateScramble) window.updateScramble();
 
         // Swap data-en / data-jp elements
         document.querySelectorAll('[data-en][data-jp]').forEach(el => {
+          let content = isJP ? el.dataset.jp : el.dataset.en;
+
+          if (el.id === 'heroGreeting') {
+            el.innerHTML = isJP ? 'こんにちは、' : "Hi, I'm";
+            return;
+          }
+          if (el.id === 'heroSuffix') {
+            el.innerHTML = isJP ? 'です' : '';
+            return;
+          }
+
+          // Preserve specific child components (icons)
           const icon = el.querySelector('i');
-          const iconHTML = icon ? icon.outerHTML + ' ' : '';
-          el.innerHTML = iconHTML + (isJP ? el.dataset.jp : el.dataset.en);
+          if (icon) {
+            el.innerHTML = icon.outerHTML + ' ' + content;
+          } else if (!el.children.length) {
+            el.textContent = content;
+          } else {
+            el.innerHTML = content;
+          }
         });
 
-        // Swap text for elements without data attributes (section labels, etc)
+        // Swap placeholders
+        document.querySelectorAll('[data-en-placeholder][data-jp-placeholder]').forEach(el => {
+          el.placeholder = isJP ? el.dataset.jpPlaceholder : el.dataset.enPlaceholder;
+        });
+
+        // Update companion label if it exists
+        if (window.companionLabel && window.companion) {
+          window.companionLabel.textContent = isJP ? window.companion.dataset.currentJp : window.companion.dataset.currentEn;
+        }
+
+        // Swap text for elements without data attributes (legacy walker for untracked strings)
         const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
         const textNodes = [];
         while (walker.nextNode()) textNodes.push(walker.currentNode);
