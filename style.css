@@ -800,7 +800,7 @@ body {
   .hero-content { flex-direction:column-reverse; text-align:center; gap:24px }
   .hero-photo { width:100%; height:25vh; min-height:220px; max-height:280px; margin:0 auto; max-width:280px }
   .hero-img { -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 100%); }
-  .photo-ring { display:none }
+  .photo-ring { display:block; inset: -4px; border-radius: var(--radius-xl); }
   
   .hero-socials { justify-content:center }
   .hero-buttons { justify-content:center; flex-direction:column }
