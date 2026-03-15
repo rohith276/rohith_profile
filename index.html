@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rohith Bhupathi — Full-Stack Developer & Creative Engineer</title>
   <meta name="description" content="Portfolio of Rohith Bhupathi — Full-Stack Developer, UI/UX Designer, and Creative Engineer specializing in React, Node.js, and modern web technologies." />
+  <meta name="author" content="Rohith Bhupathi" />
+  <meta name="keywords" content="Rohith Bhupathi, Full-Stack Developer, React Developer, Portfolio, Web Developer, UI/UX Designer, SRM University" />
+  <!-- OG Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rohith276.github.io/rohith_profile/" />
+  <meta property="og:title" content="Rohith Bhupathi — Full-Stack Developer & Creative Engineer" />
+  <meta property="og:description" content="Full-stack developer with a passion for building production-ready applications, crafting pixel-perfect UIs, and solving complex problems." />
+  <meta property="og:image" content="https://rohith276.github.io/rohith_profile/Rohith.png" />
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Rohith Bhupathi — Full-Stack Developer" />
+  <meta name="twitter:description" content="Full-stack developer crafting pixel-perfect UIs and production-ready applications." />
+  <meta name="twitter:image" content="https://rohith276.github.io/rohith_profile/Rohith.png" />
+  <link rel="icon" type="image/png" href="Rohith.png" />
   <link rel="stylesheet" href="style.css" />
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
-  <!-- Lenis Smooth Scroll -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-  <!-- GSAP + ScrollTrigger -->
   <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-
 </head>
+
 <body>
 
   <!-- Noise Grain Overlay -->
@@ -51,6 +64,9 @@
       <li><a href="#achievements">More</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="lang-toggle" id="langToggle" title="Switch to Japanese">
+      <span class="lang-flag">🇬🇧</span><span class="lang-text">EN</span>
+    </button>
     <div class="nav-toggle" id="navToggle">
       <span></span><span></span><span></span>
     </div>
@@ -67,19 +83,25 @@
     <div class="shape-ring"></div>
 
     <div class="hero-content">
-      <div class="hero-badge"><span class="dot"></span> Open to Opportunities</div>
-      <h1>Hi, I'm<br><span class="gradient-text scramble-text" id="heroName">Rohith Bhupathi</span></h1>
-      <p class="subtitle"><span id="typedText"></span><span class="cursor-blink">|</span></p>
-      <p class="hero-description">Full-stack developer with a passion for building production-ready applications, crafting pixel-perfect UIs, and solving complex problems with clean, maintainable code.</p>
-      <div class="hero-buttons">
-        <a href="Rohith-EN-Resume.pdf" download class="btn btn-primary" data-magnetic><i class="bx bx-download"></i> Download Resume</a>
-        <a href="#contact" class="btn btn-outline" data-magnetic><i class="bx bx-chat"></i> Let's Talk</a>
+      <div class="hero-text">
+        <div class="hero-badge" data-en="Open to Opportunities" data-jp="募集中"><span class="dot"></span> Open to Opportunities</div>
+        <h1>Hi, I'm<br><span class="gradient-text scramble-text" id="heroName">Rohith Bhupathi</span></h1>
+        <p class="subtitle"><span id="typedText"></span><span class="cursor-blink">|</span></p>
+        <p class="hero-description" data-en="Full-stack developer with a passion for building production-ready applications, crafting pixel-perfect UIs, and solving complex problems with clean, maintainable code." data-jp="プロダクション対応のアプリケーション構築、ピクセルパーフェクトなUI作成、クリーンで保守性の高いコードによる複雑な問題解決に情熱を持つフルスタック開発者。">Full-stack developer with a passion for building production-ready applications, crafting pixel-perfect UIs, and solving complex problems with clean, maintainable code.</p>
+        <div class="hero-buttons">
+          <a href="Rohith-EN-Resume.pdf" download class="btn btn-primary" data-magnetic><i class="bx bx-download"></i> Download Resume</a>
+          <a href="#contact" class="btn btn-outline" data-magnetic data-en="Let's Talk" data-jp="お問い合わせ"><i class="bx bx-chat"></i> Let's Talk</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://linkedin.com/in/rohith-bhupathi" target="_blank" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
+          <a href="https://github.com/rohith276" target="_blank" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+          <a href="mailto:rohithbhupathi27@gmail.com" aria-label="Email"><i class="bx bx-envelope"></i></a>
+          <a href="https://wa.me/919603174184" target="_blank" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+        </div>
       </div>
-      <div class="hero-socials">
-        <a href="https://linkedin.com/in/rohith-bhupathi" target="_blank" aria-label="LinkedIn"><i class="bx bxl-linkedin-square"></i></a>
-        <a href="https://github.com/rohith276" target="_blank" aria-label="GitHub"><i class="bx bxl-github"></i></a>
-        <a href="mailto:rohith.bhupathi@gmail.com" aria-label="Email"><i class="bx bx-envelope"></i></a>
-        <a href="https://wa.me/919603174184" target="_blank" aria-label="WhatsApp"><i class="bx bxl-whatsapp"></i></a>
+      <div class="hero-photo reveal-right">
+        <div class="photo-ring"></div>
+        <img src="Rohith.png" alt="Rohith Bhupathi" class="hero-img" />
       </div>
     </div>
   </section>
@@ -120,20 +142,61 @@
     </div>
     <div class="about-grid">
       <div class="about-text reveal">
-        <p>I'm a final-year <strong>Computer Science & Engineering</strong> student specializing in <strong>Big Data Analytics</strong> at <strong>SRM University AP</strong>. I bring strong foundations in full-stack web development, a demonstrated ability to architect and ship production-ready applications, and a genuine passion for building software that makes a meaningful difference.</p>
-        <p>Beyond development, I'm deeply interested in <strong>UI/UX Design</strong>, <strong>3D modeling with Blender</strong>, and <strong>Japanese language & culture</strong> (JLPT N4 certified). I thrive at the intersection of engineering and creativity.</p>
+        <p>I'm a final-year <strong>Computer Science & Engineering</strong> student specializing in <strong>Big Data
+            Analytics</strong> at <strong>SRM University AP</strong>. I bring strong foundations in full-stack web
+          development, a demonstrated ability to architect and ship production-ready applications, and a genuine passion
+          for building software that makes a meaningful difference.</p>
+        <p>Beyond development, I'm deeply interested in <strong>UI/UX Design</strong>, <strong>3D modeling with
+            Blender</strong>, and <strong>Japanese language & culture</strong> (JLPT N4 certified). I thrive at the
+          intersection of engineering and creativity.</p>
         <div class="about-stats">
-          <div class="stat-card"><div class="stat-number" data-count="5">0</div><div class="stat-label">Projects Built</div></div>
-          <div class="stat-card"><div class="stat-number" data-count="8">0</div><div class="stat-label">Technologies</div></div>
-          <div class="stat-card"><div class="stat-number" data-count="3">0</div><div class="stat-label">Certifications</div></div>
-          <div class="stat-card"><div class="stat-number" data-count="6">0</div><div class="stat-label">Achievements</div></div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="5">0</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="8">0</div>
+            <div class="stat-label">Technologies</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="3">0</div>
+            <div class="stat-label">Certifications</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" data-count="6">0</div>
+            <div class="stat-label">Achievements</div>
+          </div>
         </div>
       </div>
       <div class="about-info-cards reveal-right">
-        <div class="info-card"><div class="info-card-icon cyan"><i class="bx bx-user"></i></div><div class="info-card-text"><h4>Rohith Bhupathi 【ロヒト】</h4><p>Born Oct 15, 2004 · Andhra Pradesh, India</p></div></div>
-        <div class="info-card"><div class="info-card-icon violet"><i class="bx bx-code-alt"></i></div><div class="info-card-text"><h4>Full-Stack Developer</h4><p>React · Node.js · MongoDB · PostgreSQL</p></div></div>
-        <div class="info-card"><div class="info-card-icon pink"><i class="bx bx-palette"></i></div><div class="info-card-text"><h4>UI/UX & 3D Designer</h4><p>Figma · Blender · Creative Problem Solving</p></div></div>
-        <div class="info-card"><div class="info-card-icon blue"><i class="bx bx-world"></i></div><div class="info-card-text"><h4>Languages</h4><p>English (Fluent) · 日本語 (JLPT N4) · Telugu (Native)</p></div></div>
+        <div class="info-card">
+          <div class="info-card-icon cyan"><i class="bx bx-user"></i></div>
+          <div class="info-card-text">
+            <h4>Rohith Bhupathi 【ロヒト】</h4>
+            <p>Born Oct 15, 2004 · Andhra Pradesh, India</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon violet"><i class="bx bx-code-alt"></i></div>
+          <div class="info-card-text">
+            <h4>Full-Stack Developer</h4>
+            <p>React · Node.js · MongoDB · PostgreSQL</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon pink"><i class="bx bx-palette"></i></div>
+          <div class="info-card-text">
+            <h4>UI/UX & 3D Designer</h4>
+            <p>Figma · Blender · Creative Problem Solving</p>
+          </div>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon blue"><i class="bx bx-world"></i></div>
+          <div class="info-card-text">
+            <h4>Languages</h4>
+            <p>English (Fluent) · 日本語 (JLPT N4) · Telugu (Native)</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -148,31 +211,62 @@
     <div class="skills-grid">
       <div class="skill-category reveal">
         <h3 class="skill-category-title"><i class="bx bx-code-curly"></i> Frontend Development</h3>
-        <div class="skill-item"><span class="skill-name">React.js</span><div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span></div>
-        <div class="skill-item"><span class="skill-name">HTML / CSS</span><div class="rating-gems" data-rating="10"></div><span class="rating-value">10/10</span></div>
-        <div class="skill-item"><span class="skill-name">JavaScript</span><div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span></div>
-        <div class="tech-tags"><span class="tech-tag"><i class="bx bxl-react"></i> React</span><span class="tech-tag"><i class="bx bxl-html5"></i> HTML5</span><span class="tech-tag"><i class="bx bxl-css3"></i> CSS3</span><span class="tech-tag"><i class="bx bxl-javascript"></i> JS</span></div>
+        <div class="skill-item"><span class="skill-name">React.js</span>
+          <div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span>
+        </div>
+        <div class="skill-item"><span class="skill-name">HTML / CSS</span>
+          <div class="rating-gems" data-rating="10"></div><span class="rating-value">10/10</span>
+        </div>
+        <div class="skill-item"><span class="skill-name">JavaScript</span>
+          <div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span>
+        </div>
+        <div class="tech-tags"><span class="tech-tag"><i class="bx bxl-react"></i> React</span><span class="tech-tag"><i
+              class="bx bxl-html5"></i> HTML5</span><span class="tech-tag"><i class="bx bxl-css3"></i> CSS3</span><span
+            class="tech-tag"><i class="bx bxl-javascript"></i> JS</span></div>
       </div>
       <div class="skill-category reveal">
         <h3 class="skill-category-title"><i class="bx bx-server"></i> Backend & Databases</h3>
-        <div class="skill-item"><span class="skill-name">Node.js / Express</span><div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span></div>
-        <div class="skill-item"><span class="skill-name">MongoDB</span><div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span></div>
-        <div class="skill-item"><span class="skill-name">PostgreSQL / MySQL</span><div class="rating-gems" data-rating="8"></div><span class="rating-value">8/10</span></div>
-        <div class="tech-tags"><span class="tech-tag"><i class="bx bxl-nodejs"></i> Node.js</span><span class="tech-tag"><i class="bx bxs-data"></i> MongoDB</span><span class="tech-tag"><i class="bx bxs-data"></i> PostgreSQL</span></div>
+        <div class="skill-item"><span class="skill-name">Node.js / Express</span>
+          <div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span>
+        </div>
+        <div class="skill-item"><span class="skill-name">MongoDB</span>
+          <div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span>
+        </div>
+        <div class="skill-item"><span class="skill-name">PostgreSQL / MySQL</span>
+          <div class="rating-gems" data-rating="8"></div><span class="rating-value">8/10</span>
+        </div>
+        <div class="tech-tags"><span class="tech-tag"><i class="bx bxl-nodejs"></i> Node.js</span><span
+            class="tech-tag"><i class="bx bxs-data"></i> MongoDB</span><span class="tech-tag"><i
+              class="bx bxs-data"></i> PostgreSQL</span></div>
       </div>
       <div class="skill-category reveal">
         <h3 class="skill-category-title"><i class="bx bx-brush-alt"></i> Design & Tools</h3>
-        <div class="skill-item"><span class="skill-name">Figma / UI-UX</span><div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span></div>
-        <div class="skill-item"><span class="skill-name">Blender (3D)</span><div class="rating-gems" data-rating="8"></div><span class="rating-value">8/10</span></div>
-        <div class="skill-item"><span class="skill-name">Git / GitHub</span><div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span></div>
-        <div class="tech-tags"><span class="tech-tag"><i class="bx bxl-figma"></i> Figma</span><span class="tech-tag"><i class="bx bx-cube"></i> Blender</span><span class="tech-tag"><i class="bx bxl-git"></i> Git</span></div>
+        <div class="skill-item"><span class="skill-name">Figma / UI-UX</span>
+          <div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span>
+        </div>
+        <div class="skill-item"><span class="skill-name">Blender (3D)</span>
+          <div class="rating-gems" data-rating="8"></div><span class="rating-value">8/10</span>
+        </div>
+        <div class="skill-item"><span class="skill-name">Git / GitHub</span>
+          <div class="rating-gems" data-rating="9"></div><span class="rating-value">9/10</span>
+        </div>
+        <div class="tech-tags"><span class="tech-tag"><i class="bx bxl-figma"></i> Figma</span><span class="tech-tag"><i
+              class="bx bx-cube"></i> Blender</span><span class="tech-tag"><i class="bx bxl-git"></i> Git</span></div>
       </div>
       <div class="skill-category reveal">
         <h3 class="skill-category-title"><i class="bx bx-brain"></i> Languages & ML</h3>
-        <div class="skill-item"><span class="skill-name">C / C++</span><div class="rating-gems" data-rating="8"></div><span class="rating-value">8/10</span></div>
-        <div class="skill-item"><span class="skill-name">Python</span><div class="rating-gems" data-rating="8"></div><span class="rating-value">8/10</span></div>
-        <div class="skill-item"><span class="skill-name">Deep Learning / ResNet</span><div class="rating-gems" data-rating="7"></div><span class="rating-value">7/10</span></div>
-        <div class="tech-tags"><span class="tech-tag"><i class="bx bxl-python"></i> Python</span><span class="tech-tag"><i class="bx bx-chip"></i> ML</span><span class="tech-tag"><i class="bx bx-terminal"></i> C++</span></div>
+        <div class="skill-item"><span class="skill-name">C / C++</span>
+          <div class="rating-gems" data-rating="8"></div><span class="rating-value">8/10</span>
+        </div>
+        <div class="skill-item"><span class="skill-name">Python</span>
+          <div class="rating-gems" data-rating="8"></div><span class="rating-value">8/10</span>
+        </div>
+        <div class="skill-item"><span class="skill-name">Deep Learning / ResNet</span>
+          <div class="rating-gems" data-rating="7"></div><span class="rating-value">7/10</span>
+        </div>
+        <div class="tech-tags"><span class="tech-tag"><i class="bx bxl-python"></i> Python</span><span
+            class="tech-tag"><i class="bx bx-chip"></i> ML</span><span class="tech-tag"><i class="bx bx-terminal"></i>
+            C++</span></div>
       </div>
     </div>
   </section>
@@ -196,41 +290,54 @@
         </div>
         <h3>AcadSify</h3>
         <span class="project-date">Dec 2025</span>
-        <p>University academic project management system centralizing student group formation, milestone tracking, and automated grade computation based on faculty and peer reviews. Actively used within the institution.</p>
-        <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Node.js</span><span class="project-tag">MongoDB</span><span class="project-tag">Tailwind</span><span class="project-tag">DaisyUI</span></div>
+        <p>University academic project management system centralizing student group formation, milestone tracking, and
+          automated grade computation based on faculty and peer reviews. Actively used within the institution.</p>
+        <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Node.js</span><span
+            class="project-tag">MongoDB</span><span class="project-tag">Tailwind</span><span
+            class="project-tag">DaisyUI</span></div>
       </div>
       <!-- Project 2 -->
       <div class="project-card">
         <div class="project-header">
           <div class="project-icon"><i class="bx bx-line-chart"></i></div>
-          <div class="project-links"><a href="https://github.com/rohith276" target="_blank"><i class="bx bx-link-external"></i></a></div>
+          <div class="project-links"><a href="https://github.com/rohith276" target="_blank"><i
+                class="bx bx-link-external"></i></a></div>
         </div>
         <h3>Father-App Dashboard</h3>
         <span class="project-date">Mar–May 2024</span>
-        <p>Secure admin dashboard with real-time analytics and data visualization. Features role-based authentication, order/user/payment management, and streamlined data workflows.</p>
-        <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Node.js</span><span class="project-tag">MongoDB</span><span class="project-tag">DaisyUI</span></div>
+        <p>Secure admin dashboard with real-time analytics and data visualization. Features role-based authentication,
+          order/user/payment management, and streamlined data workflows.</p>
+        <div class="project-tags"><span class="project-tag">React</span><span class="project-tag">Node.js</span><span
+            class="project-tag">MongoDB</span><span class="project-tag">DaisyUI</span></div>
       </div>
       <!-- Project 3 -->
       <div class="project-card">
         <div class="project-header">
           <div class="project-icon"><i class="bx bx-brain"></i></div>
-          <div class="project-links"><a href="https://github.com/rohith276" target="_blank"><i class="bx bx-link-external"></i></a></div>
+          <div class="project-links"><a href="https://github.com/rohith276" target="_blank"><i
+                class="bx bx-link-external"></i></a></div>
         </div>
         <h3>ResNet Satellite Classification</h3>
         <span class="project-date">2024</span>
-        <p>Deep learning research applying residual neural networks (ResNet) to satellite image classification tasks. Explored transfer learning and data augmentation techniques.</p>
-        <div class="project-tags"><span class="project-tag">Python</span><span class="project-tag">TensorFlow</span><span class="project-tag">ResNet</span><span class="project-tag">Deep Learning</span></div>
+        <p>Deep learning research applying residual neural networks (ResNet) to satellite image classification tasks.
+          Explored transfer learning and data augmentation techniques.</p>
+        <div class="project-tags"><span class="project-tag">Python</span><span
+            class="project-tag">TensorFlow</span><span class="project-tag">ResNet</span><span class="project-tag">Deep
+            Learning</span></div>
       </div>
       <!-- Project 4 -->
       <div class="project-card">
         <div class="project-header">
           <div class="project-icon"><i class="bx bx-mobile-alt"></i></div>
-          <div class="project-links"><a href="https://github.com/rohith276" target="_blank"><i class="bx bx-link-external"></i></a></div>
+          <div class="project-links"><a href="https://github.com/rohith276" target="_blank"><i
+                class="bx bx-link-external"></i></a></div>
         </div>
         <h3>MyAPSSDC UI/UX</h3>
         <span class="project-date">2023</span>
-        <p>Complete UI/UX redesign and landing page development for an Andhra Pradesh skill development platform, focusing on accessibility, mobile-first design, and user engagement.</p>
-        <div class="project-tags"><span class="project-tag">Figma</span><span class="project-tag">HTML/CSS</span><span class="project-tag">UI/UX</span><span class="project-tag">Responsive</span></div>
+        <p>Complete UI/UX redesign and landing page development for an Andhra Pradesh skill development platform,
+          focusing on accessibility, mobile-first design, and user engagement.</p>
+        <div class="project-tags"><span class="project-tag">Figma</span><span class="project-tag">HTML/CSS</span><span
+            class="project-tag">UI/UX</span><span class="project-tag">Responsive</span></div>
       </div>
     </div>
   </section>
@@ -267,7 +374,7 @@
           <span class="timeline-year">2019 — 2020</span>
           <h3>SSC (10th Grade)</h3>
           <h4>SRM High School</h4>
-          <span class="grade">600 / 600 Marks (GPA 10.0)</span>
+          <span class="grade">582 / 600 Marks (GPA 9.70)</span>
         </div>
       </div>
       <div class="timeline-item reveal">
@@ -292,15 +399,27 @@
     <div class="certs-grid">
       <div class="cert-card reveal">
         <div class="cert-icon green"><i class="bx bxs-certification"></i></div>
-        <div class="cert-content"><h3>MongoDB Node.js Developer Path</h3><p>Completed the official MongoDB learning path for Node.js developers.</p><span class="cert-id">MongoDB University</span></div>
+        <div class="cert-content">
+          <h3>MongoDB Node.js Developer Path</h3>
+          <p>Completed the official MongoDB learning path for Node.js developers.</p><span class="cert-id">MongoDB
+            University</span>
+        </div>
       </div>
       <div class="cert-card reveal">
         <div class="cert-icon purple"><i class="bx bxs-brain"></i></div>
-        <div class="cert-content"><h3>ChatGPT for Everyone</h3><p>Understanding and effectively utilizing AI-driven tools for productivity and dev workflows.</p><span class="cert-id">Online Certification</span></div>
+        <div class="cert-content">
+          <h3>ChatGPT for Everyone</h3>
+          <p>Understanding and effectively utilizing AI-driven tools for productivity and dev workflows.</p><span
+            class="cert-id">Online Certification</span>
+        </div>
       </div>
       <div class="cert-card reveal">
         <div class="cert-icon orange"><i class="bx bxl-figma"></i></div>
-        <div class="cert-content"><h3>Figma Basics</h3><p>Foundation in UI/UX design using Figma — components, prototyping, auto-layout.</p><span class="cert-id">Online Certification</span></div>
+        <div class="cert-content">
+          <h3>Figma Basics</h3>
+          <p>Foundation in UI/UX design using Figma — components, prototyping, auto-layout.</p><span
+            class="cert-id">Online Certification</span>
+        </div>
       </div>
     </div>
   </section>
@@ -313,12 +432,37 @@
       <p class="section-subtitle">Milestones that shaped my journey.</p>
     </div>
     <div class="achievements-grid">
-      <div class="achievement-card reveal"><span class="achievement-emoji">🏆</span><span class="achievement-year">2024</span><h3>UX Design Challenge — Top 3</h3><p>Placed in the top 3 in a university-level UX design sprint and challenge event.</p></div>
-      <div class="achievement-card reveal"><span class="achievement-emoji">🎓</span><span class="achievement-year">2024</span><h3>Full-Stack Workshop Lead</h3><p>Organized and led a hands-on workshop on full-stack development for peers.</p></div>
-      <div class="achievement-card reveal"><span class="achievement-emoji">📖</span><span class="achievement-year">2023</span><h3>Published Telugu Poetry Book</h3><p>Authored and published a Telugu poetry collection — bridging tech and the arts.</p></div>
-      <div class="achievement-card reveal"><span class="achievement-emoji">🇯🇵</span><span class="achievement-year">2024</span><h3>JLPT N4 Certification</h3><p>Passed the Japanese Language Proficiency Test at N4 level, demonstrating dedication to cross-cultural learning.</p></div>
-      <div class="achievement-card reveal"><span class="achievement-emoji">🎨</span><span class="achievement-year">2023–24</span><h3>Design Sprint Awards</h3><p>Multiple recognitions in university design sprints for innovative UI/UX solutions.</p></div>
-      <div class="achievement-card reveal"><span class="achievement-emoji">🤝</span><span class="achievement-year">Ongoing</span><h3>Soft Skills & Leadership</h3><p>Consistently recognized for effective communication, team collaboration, and initiative.</p></div>
+      <div class="achievement-card reveal"><span class="achievement-emoji">🏆</span><span
+          class="achievement-year">2024</span>
+        <h3>UX Design Challenge — Top 3</h3>
+        <p>Placed in the top 3 in a university-level UX design sprint and challenge event.</p>
+      </div>
+      <div class="achievement-card reveal"><span class="achievement-emoji">🎓</span><span
+          class="achievement-year">2024</span>
+        <h3>Full-Stack Workshop Lead</h3>
+        <p>Organized and led a hands-on workshop on full-stack development for peers.</p>
+      </div>
+      <div class="achievement-card reveal"><span class="achievement-emoji">📖</span><span
+          class="achievement-year">2023</span>
+        <h3>Published Telugu Poetry Book</h3>
+        <p>Authored and published a Telugu poetry collection — bridging tech and the arts.</p>
+      </div>
+      <div class="achievement-card reveal"><span class="achievement-emoji">🇯🇵</span><span
+          class="achievement-year">2024</span>
+        <h3>JLPT N4 Certification</h3>
+        <p>Passed the Japanese Language Proficiency Test at N4 level, demonstrating dedication to cross-cultural
+          learning.</p>
+      </div>
+      <div class="achievement-card reveal"><span class="achievement-emoji">🎨</span><span
+          class="achievement-year">2023–24</span>
+        <h3>Design Sprint Awards</h3>
+        <p>Multiple recognitions in university design sprints for innovative UI/UX solutions.</p>
+      </div>
+      <div class="achievement-card reveal"><span class="achievement-emoji">🤝</span><span
+          class="achievement-year">Ongoing</span>
+        <h3>Soft Skills & Leadership</h3>
+        <p>Consistently recognized for effective communication, team collaboration, and initiative.</p>
+      </div>
     </div>
   </section>
 
@@ -331,25 +475,51 @@
     </div>
     <div class="contact-container">
       <div class="contact-info reveal-left">
-        <p class="contact-info-text">I'm always open to new opportunities, collaborations, and conversations. Reach out through any channel below!</p>
-        <a href="mailto:rohith.bhupathi@gmail.com" class="contact-card"><i class="bx bx-envelope"></i><div class="contact-card-text"><h4>Email</h4><p>rohith.bhupathi@gmail.com</p></div></a>
-        <a href="https://wa.me/919603174184" class="contact-card"><i class="bx bxl-whatsapp"></i><div class="contact-card-text"><h4>WhatsApp</h4><p>+91 9603174184</p></div></a>
-        <a href="https://linkedin.com/in/rohith-bhupathi" target="_blank" class="contact-card"><i class="bx bxl-linkedin-square"></i><div class="contact-card-text"><h4>LinkedIn</h4><p>Rohith Bhupathi</p></div></a>
+        <p class="contact-info-text">I'm always open to new opportunities, collaborations, and conversations. Reach out
+          through any channel below!</p>
+        <a href="mailto:rohithbhupathi27@gmail.com" class="contact-card"><i class="bx bx-envelope"></i>
+          <div class="contact-card-text">
+            <h4>Email</h4>
+            <p>rohithbhupathi27@gmail.com</p>
+          </div>
+        </a>
+        <a href="https://wa.me/919603174184" class="contact-card"><i class="bx bxl-whatsapp"></i>
+          <div class="contact-card-text">
+            <h4>WhatsApp</h4>
+            <p>+91 9603174184</p>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/rohith-bhupathi" target="_blank" class="contact-card"><i
+            class="bx bxl-linkedin-square"></i>
+          <div class="contact-card-text">
+            <h4>LinkedIn</h4>
+            <p>Rohith Bhupathi</p>
+          </div>
+        </a>
         <div class="resume-downloads">
-          <h4>📄 Download Documents</h4>
+          <h4 data-en="📄 View & Download Documents" data-jp="📄 書類の閲覧・ダウンロード">📄 View & Download Documents</h4>
           <div class="download-links">
-            <a href="Rohith-EN-Resume.pdf" download class="download-link"><i class="bx bx-download"></i> Resume (EN)</a>
-            <a href="Rohith-JP-Resume.pdf" download class="download-link"><i class="bx bx-download"></i> 履歴書 (JP)</a>
-            <a href="CoverLetter_EN_Rohith.pdf" download class="download-link"><i class="bx bx-download"></i> Cover Letter (EN)</a>
-            <a href="CoverLetter_JP_Rohith.pdf" download class="download-link"><i class="bx bx-download"></i> 志望動機書 (JP)</a>
+            <button class="download-link" onclick="openPDF('Rohith-EN-Resume.pdf')"><i class="bx bx-show"></i> Resume (EN)</button>
+            <a href="Rohith-EN-Resume.pdf" download class="download-link"><i class="bx bx-download"></i> ⬇</a>
+            <button class="download-link" onclick="openPDF('Rohith-JP-Resume.pdf')"><i class="bx bx-show"></i> 履歴書 (JP)</button>
+            <a href="Rohith-JP-Resume.pdf" download class="download-link"><i class="bx bx-download"></i> ⬇</a>
+            <button class="download-link" onclick="openPDF('CoverLetter_EN_Rohith.pdf')"><i class="bx bx-show"></i> Cover Letter</button>
+            <a href="CoverLetter_EN_Rohith.pdf" download class="download-link"><i class="bx bx-download"></i> ⬇</a>
+            <button class="download-link" onclick="openPDF('CoverLetter_JP_Rohith.pdf')"><i class="bx bx-show"></i> 志望動機書</button>
+            <a href="CoverLetter_JP_Rohith.pdf" download class="download-link"><i class="bx bx-download"></i> ⬇</a>
+            <button class="download-link" onclick="openPDF('N4_Certificate_Rohith.pdf')"><i class="bx bx-show"></i> JLPT N4 Certificate</button>
+            <a href="N4_Certificate_Rohith.pdf" download class="download-link"><i class="bx bx-download"></i> ⬇</a>
           </div>
         </div>
       </div>
       <form class="contact-form reveal-right" action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY" />
-        <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name" placeholder="John Doe" required /></div>
-        <div class="form-group"><label for="email">Your Email</label><input type="email" id="email" name="email" placeholder="john@example.com" required /></div>
-        <div class="form-group"><label for="message">Your Message</label><textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea></div>
+        <div class="form-group"><label for="name">Your Name</label><input type="text" id="name" name="name"
+            placeholder="John Doe" required /></div>
+        <div class="form-group"><label for="email">Your Email</label><input type="email" id="email" name="email"
+            placeholder="john@example.com" required /></div>
+        <div class="form-group"><label for="message">Your Message</label><textarea id="message" name="message" rows="5"
+            placeholder="Tell me about your project..." required></textarea></div>
         <button type="submit" class="submit-btn" data-magnetic><i class="bx bx-send"></i> Send Message</button>
       </form>
     </div>
@@ -366,13 +536,27 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
-    <div class="footer-left"><p>© 2026 <span>Rohith Bhupathi</span>. Crafted with passion.</p></div>
+    <div class="footer-left">
+      <p>© 2026 <span>Rohith Bhupathi</span>. Crafted with passion.</p>
+    </div>
     <div class="footer-socials">
       <a href="https://linkedin.com/in/rohith-bhupathi" target="_blank"><i class="bx bxl-linkedin-square"></i></a>
       <a href="https://github.com/rohith276" target="_blank"><i class="bx bxl-github"></i></a>
-      <a href="mailto:rohith.bhupathi@gmail.com"><i class="bx bx-envelope"></i></a>
+      <a href="mailto:rohithbhupathi27@gmail.com"><i class="bx bx-envelope"></i></a>
     </div>
   </footer>
+
+  <!-- PDF Viewer Modal -->
+  <div class="pdf-modal" id="pdfModal">
+    <div class="pdf-modal-header">
+      <span class="pdf-title" id="pdfTitle">Document</span>
+      <div class="pdf-modal-actions">
+        <a id="pdfDownload" href="#" download class="pdf-dl-btn"><i class="bx bx-download"></i> Download</a>
+        <button class="pdf-close-btn" onclick="closePDF()"><i class="bx bx-x"></i></button>
+      </div>
+    </div>
+    <iframe id="pdfFrame" class="pdf-iframe"></iframe>
+  </div>
 
   <!-- Back to Top -->
   <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="bx bx-up-arrow-alt"></i></button>
@@ -381,315 +565,427 @@
   <!-- MAIN JAVASCRIPT (NON-MODULE) -->
   <!-- ============================= -->
   <script>
-  (function() {
-    'use strict';
+    (function () {
+      'use strict';
 
-    /* ─── LENIS SMOOTH SCROLL ─── */
-    const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
-    lenis.on('scroll', ScrollTrigger.update);
-    gsap.ticker.add((time) => lenis.raf(time * 1000));
-    gsap.ticker.lagSmoothing(0);
+      /* ─── LENIS SMOOTH SCROLL ─── */
+      const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+      lenis.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => lenis.raf(time * 1000));
+      gsap.ticker.lagSmoothing(0);
 
-    /* ─── REGISTER SCROLLTRIGGER ─── */
-    gsap.registerPlugin(ScrollTrigger);
+      /* ─── REGISTER SCROLLTRIGGER ─── */
+      gsap.registerPlugin(ScrollTrigger);
 
-    /* ─── CUSTOM CURSOR ─── */
-    const dot = document.getElementById('cursorDot');
-    const ring = document.getElementById('cursorRing');
-    let curX = 0, curY = 0, dotX = 0, dotY = 0, ringX = 0, ringY = 0;
-    if (window.matchMedia('(pointer: fine)').matches) {
-      document.addEventListener('mousemove', e => { curX = e.clientX; curY = e.clientY; });
-      function animCursor() {
-        dotX += (curX - dotX) * 0.25; dotY += (curY - dotY) * 0.25;
-        ringX += (curX - ringX) * 0.12; ringY += (curY - ringY) * 0.12;
-        dot.style.left = dotX + 'px'; dot.style.top = dotY + 'px';
-        ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
-        requestAnimationFrame(animCursor);
-      }
-      animCursor();
-      document.querySelectorAll('a, button, input, textarea, .project-card, .info-card, .stat-card, .cert-card, .achievement-card, .tech-tag, [data-magnetic]').forEach(el => {
-        el.addEventListener('mouseenter', () => { dot.classList.add('hover'); ring.classList.add('hover'); });
-        el.addEventListener('mouseleave', () => { dot.classList.remove('hover'); ring.classList.remove('hover'); });
+      /* ─── CUSTOM CURSOR ─── */
+      const dot = document.getElementById('cursorDot');
+      const ring = document.getElementById('cursorRing');
+      let curX = 0, curY = 0, dotX = 0, dotY = 0, ringX = 0, ringY = 0;
+      if (window.matchMedia('(pointer: fine)').matches) {
+        document.addEventListener('mousemove', e => { curX = e.clientX; curY = e.clientY; });
+        function animCursor() {
+          dotX += (curX - dotX) * 0.25; dotY += (curY - dotY) * 0.25;
+          ringX += (curX - ringX) * 0.12; ringY += (curY - ringY) * 0.12;
+          dot.style.left = dotX + 'px'; dot.style.top = dotY + 'px';
+          ring.style.left = ringX + 'px'; ring.style.top = ringY + 'px';
+          requestAnimationFrame(animCursor);
+        }
+        animCursor();
+        document.querySelectorAll('a, button, input, textarea, .project-card, .info-card, .stat-card, .cert-card, .achievement-card, .tech-tag, [data-magnetic]').forEach(el => {
+          el.addEventListener('mouseenter', () => { dot.classList.add('hover'); ring.classList.add('hover'); });
+          el.addEventListener('mouseleave', () => { dot.classList.remove('hover'); ring.classList.remove('hover'); });
+        });
+      } else { dot.style.display = 'none'; ring.style.display = 'none'; }
+
+      /* ─── MAGNETIC BUTTONS ─── */
+      document.querySelectorAll('[data-magnetic]').forEach(btn => {
+        btn.addEventListener('mousemove', e => {
+          const rect = btn.getBoundingClientRect();
+          const x = e.clientX - rect.left - rect.width / 2;
+          const y = e.clientY - rect.top - rect.height / 2;
+          btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
+        });
+        btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
       });
-    } else { dot.style.display = 'none'; ring.style.display = 'none'; }
 
-    /* ─── MAGNETIC BUTTONS ─── */
-    document.querySelectorAll('[data-magnetic]').forEach(btn => {
-      btn.addEventListener('mousemove', e => {
-        const rect = btn.getBoundingClientRect();
-        const x = e.clientX - rect.left - rect.width / 2;
-        const y = e.clientY - rect.top - rect.height / 2;
-        btn.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`;
-      });
-      btn.addEventListener('mouseleave', () => { btn.style.transform = ''; });
-    });
-
-    /* ─── TEXT SCRAMBLE ─── */
-    class TextScramble {
-      constructor(el) { this.el = el; this.chars = '!@#$%^&*()_+-=[]{}|;:,.<>?/~`01'; this.frameReq = 0; }
-      setText(newText) {
-        const oldText = this.el.innerText; const length = Math.max(oldText.length, newText.length);
-        return new Promise(resolve => {
-          this.queue = [];
-          for (let i = 0; i < length; i++) {
-            const from = oldText[i] || ''; const to = newText[i] || '';
-            const start = Math.floor(Math.random() * 30); const end = start + Math.floor(Math.random() * 30);
-            this.queue.push({ from, to, start, end });
+      /* ─── TEXT SCRAMBLE ─── */
+      class TextScramble {
+        constructor(el) { this.el = el; this.chars = '!@#$%^&*()_+-=[]{}|;:,.<>?/~`01'; this.frameReq = 0; }
+        setText(newText) {
+          const oldText = this.el.innerText; const length = Math.max(oldText.length, newText.length);
+          return new Promise(resolve => {
+            this.queue = [];
+            for (let i = 0; i < length; i++) {
+              const from = oldText[i] || ''; const to = newText[i] || '';
+              const start = Math.floor(Math.random() * 30); const end = start + Math.floor(Math.random() * 30);
+              this.queue.push({ from, to, start, end });
+            }
+            cancelAnimationFrame(this.frameReq); this.frame = 0; this.resolve = resolve; this.update();
+          });
+        }
+        update() {
+          let output = ''; let complete = 0;
+          for (let i = 0; i < this.queue.length; i++) {
+            let { from, to, start, end, char } = this.queue[i];
+            if (this.frame >= end) { complete++; output += to; }
+            else if (this.frame >= start) {
+              if (!char || Math.random() < 0.28) { char = this.chars[Math.floor(Math.random() * this.chars.length)]; this.queue[i].char = char; }
+              output += `<span style="color:var(--accent-cyan);opacity:0.7">${char}</span>`;
+            } else { output += from; }
           }
-          cancelAnimationFrame(this.frameReq); this.frame = 0; this.resolve = resolve; this.update();
+          this.el.innerHTML = output;
+          if (complete === this.queue.length) { this.resolve(); }
+          else { this.frameReq = requestAnimationFrame(() => this.update()); this.frame++; }
+        }
+      }
+      const heroName = document.getElementById('heroName');
+      const scramble = new TextScramble(heroName);
+      setTimeout(() => scramble.setText('Rohith Bhupathi'), 500);
+
+      /* ─── TYPING EFFECT ─── */
+      const roles = ['Full-Stack Developer', 'Creative Engineer', 'UI/UX Designer', '3D Enthusiast', '日本語学習中 🇯🇵', 'Problem Solver'];
+      let roleIdx = 0, charIdx = 0, deleting = false;
+      const typedEl = document.getElementById('typedText');
+      function typeEffect() {
+        const current = roles[roleIdx];
+        typedEl.textContent = current.substring(0, charIdx);
+        if (!deleting) { charIdx++; if (charIdx > current.length) { deleting = true; setTimeout(typeEffect, 1800); return; } }
+        else { charIdx--; if (charIdx < 0) { deleting = false; roleIdx = (roleIdx + 1) % roles.length; setTimeout(typeEffect, 400); return; } }
+        setTimeout(typeEffect, deleting ? 40 : 80);
+      }
+      typeEffect();
+
+      /* ─── PARTICLE CANVAS ─── */
+      const pc = document.getElementById('particleCanvas');
+      const pctx = pc.getContext('2d');
+      function resizeParticle() { pc.width = pc.parentElement.offsetWidth; pc.height = pc.parentElement.offsetHeight; }
+      resizeParticle(); window.addEventListener('resize', resizeParticle);
+      const particles = Array.from({ length: 60 }, () => ({
+        x: Math.random() * pc.width, y: Math.random() * pc.height,
+        vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3,
+        r: Math.random() * 1.5 + .5
+      }));
+      function drawParticles() {
+        pctx.clearRect(0, 0, pc.width, pc.height);
+        particles.forEach(p => {
+          p.x += p.vx; p.y += p.vy;
+          if (p.x < 0 || p.x > pc.width) p.vx *= -1;
+          if (p.y < 0 || p.y > pc.height) p.vy *= -1;
+          pctx.beginPath(); pctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          pctx.fillStyle = 'rgba(0,212,255,0.3)'; pctx.fill();
+        });
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < 120) {
+              pctx.beginPath(); pctx.moveTo(particles[i].x, particles[i].y); pctx.lineTo(particles[j].x, particles[j].y);
+              pctx.strokeStyle = `rgba(0,212,255,${0.08 * (1 - dist / 120)})`; pctx.stroke();
+            }
+          }
+        }
+        requestAnimationFrame(drawParticles);
+      }
+      drawParticles();
+
+      /* ─── FLOATING SHAPES PARALLAX ─── */
+      document.addEventListener('mousemove', e => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 2;
+        const y = (e.clientY / window.innerHeight - 0.5) * 2;
+        document.querySelectorAll('.floating-shape').forEach(shape => {
+          const speed = parseFloat(shape.dataset.speed) || 0.03;
+          shape.style.transform = `translate(${x * speed * 200}px, ${y * speed * 200}px)`;
+        });
+      });
+
+      /* ─── GSAP SCROLL ANIMATIONS ─── */
+      // Reveal elements
+      gsap.utils.toArray('.reveal').forEach(el => {
+        gsap.fromTo(el, { opacity: 0, y: 40 }, {
+          opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' }
+        });
+      });
+      gsap.utils.toArray('.reveal-left').forEach(el => {
+        gsap.fromTo(el, { opacity: 0, x: -50 }, {
+          opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' }
+        });
+      });
+      gsap.utils.toArray('.reveal-right').forEach(el => {
+        gsap.fromTo(el, { opacity: 0, x: 50 }, {
+          opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
+          scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' }
+        });
+      });
+
+      // Split-text section titles
+      document.querySelectorAll('[data-split]').forEach(title => {
+        const text = title.textContent;
+        title.innerHTML = text.split('').map((c, i) =>
+          c === ' ' ? ' ' : `<span class="split-char" style="transition-delay:${i * 0.03}s">${c}</span>`
+        ).join('');
+        ScrollTrigger.create({
+          trigger: title, start: 'top 85%',
+          onEnter: () => title.classList.add('animated'),
+          onLeaveBack: () => title.classList.remove('animated')
+        });
+      });
+
+      // Generate + animate diamond gems
+      document.querySelectorAll('.rating-gems').forEach(container => {
+        const rating = parseInt(container.dataset.rating);
+        for (let i = 0; i < 10; i++) {
+          const gem = document.createElement('span');
+          gem.className = 'rating-gem';
+          gem.dataset.index = i;
+          container.appendChild(gem);
+        }
+        ScrollTrigger.create({
+          trigger: container, start: 'top 90%',
+          onEnter: () => {
+            container.querySelectorAll('.rating-gem').forEach((gem, i) => {
+              if (i < rating) {
+                setTimeout(() => gem.classList.add('filled'), i * 80);
+              }
+            });
+          }, once: true
+        });
+      });
+
+      // Stat counter animation
+      document.querySelectorAll('.stat-number').forEach(num => {
+        const target = parseInt(num.dataset.count);
+        ScrollTrigger.create({
+          trigger: num, start: 'top 90%',
+          onEnter: () => {
+            gsap.to({ val: 0 }, {
+              val: target, duration: 1.5, ease: 'power2.out',
+              onUpdate: function () { num.textContent = Math.round(this.targets()[0].val) + '+'; }
+            });
+          }, once: true
+        });
+      });
+
+      // Horizontal scroll for projects
+      const hTrack = document.getElementById('horizontalTrack');
+      if (hTrack && window.innerWidth > 768) {
+        gsap.to(hTrack, {
+          x: () => -(hTrack.scrollWidth - window.innerWidth + 100),
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.horizontal-section', pin: true, scrub: 1,
+            end: () => '+=' + (hTrack.scrollWidth - window.innerWidth + 200),
+            invalidateOnRefresh: true
+          }
         });
       }
-      update() {
-        let output = ''; let complete = 0;
-        for (let i = 0; i < this.queue.length; i++) {
-          let { from, to, start, end, char } = this.queue[i];
-          if (this.frame >= end) { complete++; output += to; }
-          else if (this.frame >= start) {
-            if (!char || Math.random() < 0.28) { char = this.chars[Math.floor(Math.random() * this.chars.length)]; this.queue[i].char = char; }
-            output += `<span style="color:var(--accent-cyan);opacity:0.7">${char}</span>`;
-          } else { output += from; }
+
+      /* ─── NAVBAR SCROLL + PROGRESS ─── */
+      const navbar = document.getElementById('navbar');
+      const progressBar = document.getElementById('scrollProgress');
+      const backBtn = document.getElementById('backToTop');
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        navbar.classList.toggle('scrolled', scrollTop > 50);
+        progressBar.style.width = (scrollTop / docHeight * 100) + '%';
+        backBtn.classList.toggle('show', scrollTop > 600);
+      });
+      backBtn.addEventListener('click', () => lenis.scrollTo(0));
+
+      /* ─── SCROLL SPY ─── */
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      function updateSpy() {
+        const scrollPos = window.scrollY + 200;
+        sections.forEach(sec => {
+          if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
+            navLinks.forEach(l => l.classList.remove('active'));
+            const active = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
+            if (active) active.classList.add('active');
+          }
+        });
+      }
+      window.addEventListener('scroll', updateSpy);
+
+      /* ─── MOBILE MENU ─── */
+      const toggle = document.getElementById('navToggle');
+      const navMenu = document.getElementById('navLinks');
+      toggle.addEventListener('click', () => { toggle.classList.toggle('open'); navMenu.classList.toggle('open'); });
+      navLinks.forEach(l => l.addEventListener('click', () => { toggle.classList.remove('open'); navMenu.classList.remove('open'); }));
+
+      /* ─── BUTTON RIPPLE ─── */
+      document.querySelectorAll('.btn, .submit-btn').forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          const ripple = document.createElement('span'); ripple.classList.add('ripple');
+          const rect = this.getBoundingClientRect();
+          const size = Math.max(rect.width, rect.height);
+          ripple.style.width = ripple.style.height = size + 'px';
+          ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+          ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+          this.appendChild(ripple); setTimeout(() => ripple.remove(), 600);
+        });
+      });
+
+      /* ─── VISITOR COUNTER ─── */
+      (async function () {
+        const el = document.getElementById('visitorCount');
+        try {
+          const res = await fetch('https://api.counterapi.dev/v1/rohith-portfolio/visits/up');
+          const data = await res.json(); el.textContent = data.count || '1';
+        } catch {
+          let c = parseInt(localStorage.getItem('portfolio_views') || '0') + 1;
+          localStorage.setItem('portfolio_views', c); el.textContent = c;
         }
-        this.el.innerHTML = output;
-        if (complete === this.queue.length) { this.resolve(); }
-        else { this.frameReq = requestAnimationFrame(() => this.update()); this.frame++; }
-      }
-    }
-    const heroName = document.getElementById('heroName');
-    const scramble = new TextScramble(heroName);
-    setTimeout(() => scramble.setText('Rohith Bhupathi'), 500);
+      })();
 
-    /* ─── TYPING EFFECT ─── */
-    const roles = ['Full-Stack Developer', 'Creative Engineer', 'UI/UX Designer', '3D Enthusiast', '日本語学習中 🇯🇵', 'Problem Solver'];
-    let roleIdx = 0, charIdx = 0, deleting = false;
-    const typedEl = document.getElementById('typedText');
-    function typeEffect() {
-      const current = roles[roleIdx];
-      typedEl.textContent = current.substring(0, charIdx);
-      if (!deleting) { charIdx++; if (charIdx > current.length) { deleting = true; setTimeout(typeEffect, 1800); return; } }
-      else { charIdx--; if (charIdx < 0) { deleting = false; roleIdx = (roleIdx + 1) % roles.length; setTimeout(typeEffect, 400); return; } }
-      setTimeout(typeEffect, deleting ? 40 : 80);
-    }
-    typeEffect();
-
-    /* ─── PARTICLE CANVAS ─── */
-    const pc = document.getElementById('particleCanvas');
-    const pctx = pc.getContext('2d');
-    function resizeParticle() { pc.width = pc.parentElement.offsetWidth; pc.height = pc.parentElement.offsetHeight; }
-    resizeParticle(); window.addEventListener('resize', resizeParticle);
-    const particles = Array.from({ length: 60 }, () => ({
-      x: Math.random() * pc.width, y: Math.random() * pc.height,
-      vx: (Math.random() - .5) * .3, vy: (Math.random() - .5) * .3,
-      r: Math.random() * 1.5 + .5
-    }));
-    function drawParticles() {
-      pctx.clearRect(0, 0, pc.width, pc.height);
-      particles.forEach(p => {
-        p.x += p.vx; p.y += p.vy;
-        if (p.x < 0 || p.x > pc.width) p.vx *= -1;
-        if (p.y < 0 || p.y > pc.height) p.vy *= -1;
-        pctx.beginPath(); pctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        pctx.fillStyle = 'rgba(0,212,255,0.3)'; pctx.fill();
-      });
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 120) { pctx.beginPath(); pctx.moveTo(particles[i].x, particles[i].y); pctx.lineTo(particles[j].x, particles[j].y);
-            pctx.strokeStyle = `rgba(0,212,255,${0.08 * (1 - dist / 120)})`; pctx.stroke(); }
+      /* ─── ANIMATED COMPANION (Morphing Orb) ─── */
+      const companion = document.getElementById('companion');
+      const companionLabel = document.getElementById('companionLabel');
+      if (companion && window.innerWidth > 768) {
+        const companionStates = [
+          { id: 'hero', state: 'wave', label: 'Hey there!' },
+          { id: 'about', state: 'curious', label: 'That\'s me!' },
+          { id: 'skills', state: 'flex', label: 'My skills!' },
+          { id: 'projects', state: 'rocket', label: 'Cool stuff!' },
+          { id: 'education', state: 'study', label: 'Learning!' },
+          { id: 'certifications', state: 'check', label: 'Certified!' },
+          { id: 'achievements', state: 'trophy', label: 'Proud!' },
+          { id: 'contact', state: 'chat', label: 'Let\'s talk!' }
+        ];
+        let currentState = 'wave';
+        function setCompanionState(state, label) {
+          companion.className = 'companion state-' + state;
+          companionLabel.textContent = label;
+          companion.classList.add('bounce');
+          setTimeout(() => companion.classList.remove('bounce'), 500);
+          currentState = state;
         }
-      }
-      requestAnimationFrame(drawParticles);
-    }
-    drawParticles();
-
-    /* ─── FLOATING SHAPES PARALLAX ─── */
-    document.addEventListener('mousemove', e => {
-      const x = (e.clientX / window.innerWidth - 0.5) * 2;
-      const y = (e.clientY / window.innerHeight - 0.5) * 2;
-      document.querySelectorAll('.floating-shape').forEach(shape => {
-        const speed = parseFloat(shape.dataset.speed) || 0.03;
-        shape.style.transform = `translate(${x * speed * 200}px, ${y * speed * 200}px)`;
-      });
-    });
-
-    /* ─── GSAP SCROLL ANIMATIONS ─── */
-    // Reveal elements
-    gsap.utils.toArray('.reveal').forEach(el => {
-      gsap.fromTo(el, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' }
-      });
-    });
-    gsap.utils.toArray('.reveal-left').forEach(el => {
-      gsap.fromTo(el, { opacity: 0, x: -50 }, { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' }
-      });
-    });
-    gsap.utils.toArray('.reveal-right').forEach(el => {
-      gsap.fromTo(el, { opacity: 0, x: 50 }, { opacity: 1, x: 0, duration: 0.8, ease: 'power2.out',
-        scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' }
-      });
-    });
-
-    // Split-text section titles
-    document.querySelectorAll('[data-split]').forEach(title => {
-      const text = title.textContent;
-      title.innerHTML = text.split('').map((c, i) =>
-        c === ' ' ? ' ' : `<span class="split-char" style="transition-delay:${i * 0.03}s">${c}</span>`
-      ).join('');
-      ScrollTrigger.create({
-        trigger: title, start: 'top 85%',
-        onEnter: () => title.classList.add('animated'),
-        onLeaveBack: () => title.classList.remove('animated')
-      });
-    });
-
-    // Generate + animate diamond gems
-    document.querySelectorAll('.rating-gems').forEach(container => {
-      const rating = parseInt(container.dataset.rating);
-      for (let i = 0; i < 10; i++) {
-        const gem = document.createElement('span');
-        gem.className = 'rating-gem';
-        gem.dataset.index = i;
-        container.appendChild(gem);
-      }
-      ScrollTrigger.create({
-        trigger: container, start: 'top 90%',
-        onEnter: () => {
-          container.querySelectorAll('.rating-gem').forEach((gem, i) => {
-            if (i < rating) {
-              setTimeout(() => gem.classList.add('filled'), i * 80);
-            }
+        companionStates.forEach(s => {
+          ScrollTrigger.create({
+            trigger: '#' + s.id, start: 'top center',
+            onEnter: () => setCompanionState(s.state, s.label),
+            onEnterBack: () => setCompanionState(s.state, s.label)
           });
-        }, once: true
-      });
-    });
+        });
+        // Mouse tracking
+        document.addEventListener('mousemove', e => {
+          const x = (e.clientX / window.innerWidth - 0.5) * 8;
+          const y = (e.clientY / window.innerHeight - 0.5) * 8;
+          companion.style.setProperty('--tx', x + 'px');
+          companion.style.setProperty('--ty', y + 'px');
+        });
+      } else if (companion) { companion.style.display = 'none'; }
 
-    // Stat counter animation
-    document.querySelectorAll('.stat-number').forEach(num => {
-      const target = parseInt(num.dataset.count);
-      ScrollTrigger.create({
-        trigger: num, start: 'top 90%',
-        onEnter: () => {
-          gsap.to({ val: 0 }, { val: target, duration: 1.5, ease: 'power2.out',
-            onUpdate: function() { num.textContent = Math.round(this.targets()[0].val) + '+'; }
-          });
-        }, once: true
-      });
-    });
-
-    // Horizontal scroll for projects
-    const hTrack = document.getElementById('horizontalTrack');
-    if (hTrack && window.innerWidth > 768) {
-      gsap.to(hTrack, {
-        x: () => -(hTrack.scrollWidth - window.innerWidth + 100),
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.horizontal-section', pin: true, scrub: 1,
-          end: () => '+=' + (hTrack.scrollWidth - window.innerWidth + 200),
-          invalidateOnRefresh: true
-        }
-      });
-    }
-
-    /* ─── NAVBAR SCROLL + PROGRESS ─── */
-    const navbar = document.getElementById('navbar');
-    const progressBar = document.getElementById('scrollProgress');
-    const backBtn = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      navbar.classList.toggle('scrolled', scrollTop > 50);
-      progressBar.style.width = (scrollTop / docHeight * 100) + '%';
-      backBtn.classList.toggle('show', scrollTop > 600);
-    });
-    backBtn.addEventListener('click', () => lenis.scrollTo(0));
-
-    /* ─── SCROLL SPY ─── */
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-links a');
-    function updateSpy() {
-      const scrollPos = window.scrollY + 200;
-      sections.forEach(sec => {
-        if (scrollPos >= sec.offsetTop && scrollPos < sec.offsetTop + sec.offsetHeight) {
-          navLinks.forEach(l => l.classList.remove('active'));
-          const active = document.querySelector(`.nav-links a[href="#${sec.id}"]`);
-          if (active) active.classList.add('active');
-        }
-      });
-    }
-    window.addEventListener('scroll', updateSpy);
-
-    /* ─── MOBILE MENU ─── */
-    const toggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navLinks');
-    toggle.addEventListener('click', () => { toggle.classList.toggle('open'); navMenu.classList.toggle('open'); });
-    navLinks.forEach(l => l.addEventListener('click', () => { toggle.classList.remove('open'); navMenu.classList.remove('open'); }));
-
-    /* ─── BUTTON RIPPLE ─── */
-    document.querySelectorAll('.btn, .submit-btn').forEach(btn => {
-      btn.addEventListener('click', function(e) {
-        const ripple = document.createElement('span'); ripple.classList.add('ripple');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        ripple.style.width = ripple.style.height = size + 'px';
-        ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
-        ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
-        this.appendChild(ripple); setTimeout(() => ripple.remove(), 600);
-      });
-    });
-
-    /* ─── VISITOR COUNTER ─── */
-    (async function() {
-      const el = document.getElementById('visitorCount');
-      try {
-        const res = await fetch('https://api.counterapi.dev/v1/rohith-portfolio/visits/up');
-        const data = await res.json(); el.textContent = data.count || '1';
-      } catch {
-        let c = parseInt(localStorage.getItem('portfolio_views') || '0') + 1;
-        localStorage.setItem('portfolio_views', c); el.textContent = c;
-      }
     })();
 
-    /* ─── ANIMATED COMPANION (Morphing Orb) ─── */
-    const companion = document.getElementById('companion');
-    const companionLabel = document.getElementById('companionLabel');
-    if (companion && window.innerWidth > 768) {
-      const companionStates = [
-        { id: 'hero', state: 'wave', label: 'Hey there!' },
-        { id: 'about', state: 'curious', label: 'That\'s me!' },
-        { id: 'skills', state: 'flex', label: 'My skills!' },
-        { id: 'projects', state: 'rocket', label: 'Cool stuff!' },
-        { id: 'education', state: 'study', label: 'Learning!' },
-        { id: 'certifications', state: 'check', label: 'Certified!' },
-        { id: 'achievements', state: 'trophy', label: 'Proud!' },
-        { id: 'contact', state: 'chat', label: 'Let\'s talk!' }
-      ];
-      let currentState = 'wave';
-      function setCompanionState(state, label) {
-        companion.className = 'companion state-' + state;
-        companionLabel.textContent = label;
-        companion.classList.add('bounce');
-        setTimeout(() => companion.classList.remove('bounce'), 500);
-        currentState = state;
-      }
-      companionStates.forEach(s => {
-        ScrollTrigger.create({
-          trigger: '#' + s.id, start: 'top center',
-          onEnter: () => setCompanionState(s.state, s.label),
-          onEnterBack: () => setCompanionState(s.state, s.label)
-        });
-      });
-      // Mouse tracking
-      document.addEventListener('mousemove', e => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 8;
-        const y = (e.clientY / window.innerHeight - 0.5) * 8;
-        companion.style.setProperty('--tx', x + 'px');
-        companion.style.setProperty('--ty', y + 'px');
-      });
-    } else if (companion) { companion.style.display = 'none'; }
+    /* ─── PDF VIEWER ─── */
+    function openPDF(url) {
+      const modal = document.getElementById('pdfModal');
+      const frame = document.getElementById('pdfFrame');
+      const title = document.getElementById('pdfTitle');
+      const dl = document.getElementById('pdfDownload');
+      frame.src = url;
+      title.textContent = url.replace('.pdf','').replace(/_/g,' ');
+      dl.href = url;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closePDF() {
+      const modal = document.getElementById('pdfModal');
+      document.getElementById('pdfFrame').src = '';
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('pdfModal').addEventListener('click', function(e) {
+      if (e.target === this) closePDF();
+    });
 
-  })();
+    /* ─── EN/JP LANGUAGE TOGGLE ─── */
+    (function() {
+      const translations = {
+        // Section labels
+        'About Me': '自己紹介',
+        'Who I Am': '私について',
+        'A creative engineer who loves turning ideas into impactful digital experiences.': 'アイデアをインパクトのあるデジタル体験に変えることが大好きなクリエイティブエンジニア。',
+        'Technical Arsenal': '技術スキル',
+        'Skills & Expertise': 'スキルと専門知識',
+        "Technologies I've worked with and proficiency levels.": '使用した技術と習熟度。',
+        'Featured Work': '注目のプロジェクト',
+        'Projects': 'プロジェクト',
+        "Real-world applications I've designed, built, and deployed.": '設計・構築・デプロイした実アプリケーション。',
+        'Education': '学歴',
+        'Academic Journey': '学びの道',
+        'My path through academia and continuous learning.': '学術と継続的学習の軌跡。',
+        'Certifications': '資格',
+        'Credentials': '資格証明',
+        'Validated skills and professional development milestones.': '検証されたスキルと専門能力。',
+        'Highlights': 'ハイライト',
+        'Achievements': '実績',
+        'Milestones that shaped my journey.': '私の成長を形作ったマイルストーン。',
+        'Get in Touch': 'お問い合わせ',
+        "Let's Connect": 'つながりましょう',
+        'Have a project in mind or just want to say hello?': 'プロジェクトのご相談やお気軽にご連絡ください。',
+        'Total Portfolio Views': 'ポートフォリオ総閲覧数',
+        // Footer
+        'Crafted with passion.': '情熱を込めて制作。',
+        // Contact
+        "I'm always open to new opportunities, collaborations, and conversations. Reach out through any channel below!": '新しい機会、コラボレーション、会話にオープンです。以下のチャンネルからお気軽にご連絡ください！',
+        'Your Name': 'お名前',
+        'Your Email': 'メールアドレス',
+        'Your Message': 'メッセージ',
+        'Send Message': 'メッセージを送信',
+        // Hero
+        'Download Resume': '履歴書ダウンロード',
+        // About cards
+        'Full-Stack Developer': 'フルスタック開発者',
+        'UI/UX & 3D Designer': 'UI/UX & 3Dデザイナー',
+        'Languages': '言語',
+        'Projects Built': '構築したプロジェクト',
+        'Technologies': '技術',
+        'Achievements': '実績',
+      };
+
+      let isJP = false;
+      const toggle = document.getElementById('langToggle');
+
+      toggle.addEventListener('click', () => {
+        isJP = !isJP;
+        toggle.querySelector('.lang-flag').textContent = isJP ? '🇯🇵' : '🇬🇧';
+        toggle.querySelector('.lang-text').textContent = isJP ? 'JP' : 'EN';
+        toggle.title = isJP ? 'Switch to English' : 'Switch to Japanese';
+        document.documentElement.lang = isJP ? 'ja' : 'en';
+
+        // Swap data-en / data-jp elements
+        document.querySelectorAll('[data-en][data-jp]').forEach(el => {
+          const icon = el.querySelector('i');
+          const iconHTML = icon ? icon.outerHTML + ' ' : '';
+          el.innerHTML = iconHTML + (isJP ? el.dataset.jp : el.dataset.en);
+        });
+
+        // Swap text for elements without data attributes (section labels, etc)
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+        const textNodes = [];
+        while (walker.nextNode()) textNodes.push(walker.currentNode);
+        textNodes.forEach(node => {
+          const trimmed = node.textContent.trim();
+          if (isJP && translations[trimmed]) {
+            node._original = trimmed;
+            node.textContent = node.textContent.replace(trimmed, translations[trimmed]);
+          } else if (!isJP && node._original) {
+            node.textContent = node.textContent.replace(node.textContent.trim(), node._original);
+          }
+        });
+
+        localStorage.setItem('portfolio_lang', isJP ? 'jp' : 'en');
+      });
+
+      // Restore preference
+      if (localStorage.getItem('portfolio_lang') === 'jp') toggle.click();
+    })();
   </script>
 
 </body>
+
 </html>
