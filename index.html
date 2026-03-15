@@ -12,15 +12,7 @@
   <!-- GSAP + ScrollTrigger -->
   <script src="https://unpkg.com/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <!-- Three.js Import Map -->
-  <script type="importmap">
-  {
-    "imports": {
-      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
-      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
-    }
-  }
-  </script>
+
 </head>
 <body>
 
@@ -34,8 +26,11 @@
   <!-- Scroll Progress -->
   <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- 3D Robot Canvas -->
-  <canvas class="robot-canvas" id="robotCanvas"></canvas>
+  <!-- Animated Companion -->
+  <div class="companion" id="companion">
+    <div class="companion-face" id="companionFace">👋</div>
+    <div class="companion-label" id="companionLabel">Hey there!</div>
+  </div>
 
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
@@ -375,9 +370,7 @@
     'use strict';
 
     /* ─── LENIS SMOOTH SCROLL ─── */
-    const lenis = new Lenis({ lerp: 0.08, smoothWheel: true, syncTouch: true });
-    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
-    requestAnimationFrame(raf);
+    const lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
     lenis.on('scroll', ScrollTrigger.update);
     gsap.ticker.add((time) => lenis.raf(time * 1000));
     gsap.ticker.lagSmoothing(0);
@@ -638,134 +631,45 @@
       }
     })();
 
-  })();
-  </script>
-
-  <!-- ============================= -->
-  <!-- THREE.JS ROBOT (ES MODULE)   -->
-  <!-- ============================= -->
-  <script type="module">
-  import * as THREE from 'three';
-  import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-
-  const canvas = document.getElementById('robotCanvas');
-  if (canvas && window.innerWidth > 1024) {
-
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(35, canvas.clientWidth / canvas.clientHeight, 0.1, 100);
-    camera.position.set(0, 1.2, 4);
-
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
-    renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.outputColorSpace = THREE.SRGBColorSpace;
-
-    // Lighting
-    const ambientLight = new THREE.AmbientLight(0xffffff, 1.2);
-    scene.add(ambientLight);
-    const dirLight = new THREE.DirectionalLight(0x00d4ff, 2.5);
-    dirLight.position.set(3, 4, 5);
-    scene.add(dirLight);
-    const backLight = new THREE.DirectionalLight(0x8b5cf6, 1.5);
-    backLight.position.set(-3, 2, -3);
-    scene.add(backLight);
-
-    let mixer, robot, actions = {}, currentAction = 'Idle';
-    const clock = new THREE.Clock();
-    let mouseX = 0, mouseY = 0;
-
-    // Load Robot
-    const loader = new GLTFLoader();
-    loader.load('./RobotExpressive.glb', (gltf) => {
-      robot = gltf.scene;
-      robot.scale.set(0.7, 0.7, 0.7);
-      robot.position.set(0, -0.5, 0);
-      scene.add(robot);
-
-      // Setup animations
-      mixer = new THREE.AnimationMixer(robot);
-      gltf.animations.forEach(clip => {
-        actions[clip.name] = mixer.clipAction(clip);
+    /* ─── ANIMATED COMPANION ─── */
+    const companion = document.getElementById('companion');
+    const companionFace = document.getElementById('companionFace');
+    const companionLabel = document.getElementById('companionLabel');
+    if (companion && window.innerWidth > 768) {
+      const companionStates = [
+        { id: 'hero', emoji: '👋', label: 'Hey there!' },
+        { id: 'about', emoji: '🤓', label: 'That\'s me!' },
+        { id: 'skills', emoji: '💪', label: 'My skills!' },
+        { id: 'projects', emoji: '🚀', label: 'Cool stuff!' },
+        { id: 'education', emoji: '📚', label: 'Learning!' },
+        { id: 'certifications', emoji: '✅', label: 'Certified!' },
+        { id: 'achievements', emoji: '🏆', label: 'Proud!' },
+        { id: 'contact', emoji: '💬', label: 'Let\'s talk!' }
+      ];
+      companionStates.forEach(state => {
+        ScrollTrigger.create({
+          trigger: '#' + state.id, start: 'top center',
+          onEnter: () => {
+            companionFace.textContent = state.emoji;
+            companionLabel.textContent = state.label;
+            companion.classList.add('bounce');
+            setTimeout(() => companion.classList.remove('bounce'), 500);
+          },
+          onEnterBack: () => {
+            companionFace.textContent = state.emoji;
+            companionLabel.textContent = state.label;
+          }
+        });
       });
+      // Subtle mouse tracking
+      document.addEventListener('mousemove', e => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 8;
+        const y = (e.clientY / window.innerHeight - 0.5) * 8;
+        companion.style.transform = `translate(${x}px, ${y}px)`;
+      });
+    } else if (companion) { companion.style.display = 'none'; }
 
-      // Start with Wave
-      if (actions['Wave']) {
-        actions['Wave'].reset().play();
-        currentAction = 'Wave';
-        // After wave, go to idle
-        setTimeout(() => playAnim('Idle'), 3000);
-      } else if (actions['Idle']) {
-        actions['Idle'].reset().play();
-      }
-
-      // Setup scroll-triggered animation changes
-      setupRobotScrollTriggers();
-
-    }, undefined, (err) => console.warn('Robot model failed to load:', err));
-
-    function playAnim(name) {
-      if (!actions[name] || currentAction === name) return;
-      const prev = actions[currentAction];
-      const next = actions[name];
-      if (prev) prev.fadeOut(0.4);
-      next.reset().fadeIn(0.4).play();
-      currentAction = name;
-    }
-
-    function setupRobotScrollTriggers() {
-      // About -> Idle
-      ScrollTrigger.create({ trigger: '#about', start: 'top center',
-        onEnter: () => playAnim('Idle'), onEnterBack: () => playAnim('Idle') });
-      // Skills -> ThumbsUp
-      ScrollTrigger.create({ trigger: '#skills', start: 'top center',
-        onEnter: () => playAnim('ThumbsUp'), onEnterBack: () => playAnim('ThumbsUp') });
-      // Projects -> Dance
-      ScrollTrigger.create({ trigger: '#projects', start: 'top center',
-        onEnter: () => playAnim('Dance'), onEnterBack: () => playAnim('Dance') });
-      // Education -> Walking
-      ScrollTrigger.create({ trigger: '#education', start: 'top center',
-        onEnter: () => playAnim('Walking'), onEnterBack: () => playAnim('Walking') });
-      // Certifications -> Yes
-      ScrollTrigger.create({ trigger: '#certifications', start: 'top center',
-        onEnter: () => playAnim('Yes'), onEnterBack: () => playAnim('Yes') });
-      // Achievements -> Jump
-      ScrollTrigger.create({ trigger: '#achievements', start: 'top center',
-        onEnter: () => playAnim('Jump'), onEnterBack: () => playAnim('Jump') });
-      // Contact -> Wave
-      ScrollTrigger.create({ trigger: '#contact', start: 'top center',
-        onEnter: () => playAnim('Wave'), onEnterBack: () => playAnim('Wave') });
-    }
-
-    // Mouse tracking for robot
-    document.addEventListener('mousemove', (e) => {
-      mouseX = (e.clientX / window.innerWidth) * 2 - 1;
-      mouseY = (e.clientY / window.innerHeight) * 2 - 1;
-    });
-
-    // Render loop
-    function animate() {
-      requestAnimationFrame(animate);
-      const delta = clock.getDelta();
-      if (mixer) mixer.update(delta);
-
-      // Robot follows mouse subtly
-      if (robot) {
-        robot.rotation.y += (mouseX * 0.4 - robot.rotation.y) * 0.05;
-        robot.rotation.x += (-mouseY * 0.1 - robot.rotation.x) * 0.05;
-      }
-      renderer.render(scene, camera);
-    }
-    animate();
-
-    // Resize handler
-    window.addEventListener('resize', () => {
-      if (window.innerWidth <= 1024) { canvas.style.display = 'none'; return; }
-      canvas.style.display = 'block';
-      camera.aspect = canvas.clientWidth / canvas.clientHeight;
-      camera.updateProjectionMatrix();
-      renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-    });
-  }
+  })();
   </script>
 
 </body>
