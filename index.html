@@ -1098,22 +1098,37 @@
         const el = document.getElementById('visitorCount');
         const hasCounted = sessionStorage.getItem('has_counted_view');
         
+        // Helper to get local fallback
+        const getLocalCount = () => parseInt(localStorage.getItem('portfolio_views') || '0');
+        const setLocalCount = (val) => localStorage.setItem('portfolio_views', val);
+
         try {
+          let count;
           if (!hasCounted) {
+            // First time in session: Increment
             const res = await fetch('https://api.counterapi.dev/v1/rohith-portfolio/visits/up');
             const data = await res.json();
-            el.textContent = data.count || '1';
+            count = data.count;
             sessionStorage.setItem('has_counted_view', 'true');
           } else {
+            // Reload in same session: Just fetch
             const res = await fetch('https://api.counterapi.dev/v1/rohith-portfolio/visits');
             const data = await res.json();
-            el.textContent = data.count || '1';
+            count = data.count;
           }
-        } catch {
-          let c = parseInt(localStorage.getItem('portfolio_views') || '0');
+
+          if (count !== undefined) {
+            el.textContent = count;
+            setLocalCount(count); // Save latest for next fallback
+          } else {
+            throw new Error('Invalid API response');
+          }
+        } catch (err) {
+          console.warn('Visitor counter API failed, using local fallback:', err);
+          let c = getLocalCount();
           if (!hasCounted) {
             c += 1;
-            localStorage.setItem('portfolio_views', c);
+            setLocalCount(c);
             sessionStorage.setItem('has_counted_view', 'true');
           }
           el.textContent = c;
@@ -1123,17 +1138,17 @@
       /* ─── TOGGLE NOTIFICATION ─── */
       window.addEventListener('load', () => {
         const langToggle = document.getElementById('langToggle');
-        const hasShownNotify = localStorage.getItem('has_shown_lang_notify');
+        const hasShownNotify = sessionStorage.getItem('has_shown_lang_notify_session'); // Use session to show once per visit
         
         if (!hasShownNotify && langToggle) {
           setTimeout(() => {
             langToggle.classList.add('notify-active');
-            localStorage.setItem('has_shown_lang_notify', 'true');
+            sessionStorage.setItem('has_shown_lang_notify_session', 'true');
             // Remove class after animation to allow future interactions
             setTimeout(() => {
               langToggle.classList.remove('notify-active');
             }, 3000);
-          }, 2000); // Show after 2 seconds
+          }, 1500); // Show slightly earlier
         }
       });
 
