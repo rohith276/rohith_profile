@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rohith | Web Designer & Engineer</title>
+    <meta name="description" content="Portfolio of Rohith, a full-stack developer and web designer specializing in modern web applications.">
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <div class="logo-icon">R</div>
+                Rohith
+            </a>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div class="nav-links" id="navLinks">
+                <a href="../index.html" class="nav-cta" style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);" data-en="Back to Profile" data-jp="プロフィールへ"><i class="fa-solid fa-arrow-left"></i> Back to Profile</a>
+                <a href="#works" data-en="Works" data-jp="作品">Works</a>
+                <button class="lang-toggle" id="langToggle" title="Switch Language" style="background: transparent; border: 1px solid rgba(255,255,255,0.2); border-radius: 20px; padding: 5px 10px; color: white; cursor: pointer; display: flex; gap: 5px; align-items: center;">
+                  <span class="lang-opt">EN</span>
+                  <span style="opacity: 0.5;">|</span>
+                  <span class="lang-opt" style="opacity: 0.5;">JP</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <!-- FEATURED WORKS -->
+    <section class="section featured" id="works" style="padding-top: 120px;">
+        <div class="container">
+            <div class="featured-header reveal">
+                <div class="section-label" data-en="Pickup Works" data-jp="ピックアップ作品">Pickup Works</div>
+                <h2 class="section-title" data-en="Selected Projects" data-jp="厳選されたプロジェクト">Selected Projects</h2>
+                <p class="section-desc" data-en="Deep dives into complex, production-ready platforms featuring enterprise-grade architecture and premium UX." data-jp="エンタープライズレベルのアーキテクチャとプレミアムなUXを備えた、複雑で実稼働環境に対応するプラットフォームの深掘り。">Deep dives into complex, production-ready platforms featuring enterprise-grade architecture and premium UX.</p>
+            </div>
+
+            <div id="featuredContainer">
+                <!-- Featured projects will be dynamically injected here by script.js -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div class="footer-copy">
+                Crafted with passion by Rohith
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#works">Works</a>
+                <a href="../index.html">Profile</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL (Project Details) -->
+    <div class="modal-backdrop" id="projectModal">
+        <div class="modal">
+            <div class="modal-header">
+                <img src="" alt="" class="modal-hero-image" id="modalImage">
+                <button class="modal-close" id="modalClose"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="project-type" id="modalType"></div>
+                <h2 id="modalTitle"></h2>
+                
+                <div class="modal-section">
+                    <h4>Overview</h4>
+                    <p id="modalDesc"></p>
+                </div>
+                
+                <div class="modal-section" id="modalTechStackWrapper">
+                    <h4>Tech Stack</h4>
+                    <div class="tech-tags" id="modalTechStack"></div>
+                </div>
+                
+                <div class="modal-section" id="modalFeaturesWrapper">
+                    <h4>Key Features</h4>
+                    <ul id="modalFeatures"></ul>
+                </div>
+                
+                <div class="modal-section" id="modalGalleryWrapper">
+                    <h4>Gallery</h4>
+                    <div class="modal-gallery" id="modalGallery"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      (function() {
+        const toggle = document.getElementById('langToggle');
+        if (!toggle) return;
+        const opts = toggle.querySelectorAll('.lang-opt');
+        let isJP = false;
+
+        const translations = {
+          "View Case Study": "ケーススタディを見る",
+          "Live Preview": "ライブプレビュー",
+          "Crafted with passion by Rohith": "Rohithによる情熱的な制作"
+        };
+
+        toggle.addEventListener('click', () => {
+          isJP = !isJP;
+          
+          opts[0].style.opacity = isJP ? '0.5' : '1';
+          opts[1].style.opacity = isJP ? '1' : '0.5';
+
+          document.querySelectorAll('[data-en][data-jp]').forEach(el => {
+            const icon = el.querySelector('i');
+            if (icon) {
+                el.innerHTML = '';
+                el.appendChild(icon);
+                el.appendChild(document.createTextNode(' ' + (isJP ? el.dataset.jp : el.dataset.en)));
+            } else {
+                el.textContent = isJP ? el.dataset.jp : el.dataset.en;
+            }
+          });
+
+          const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null);
+          const textNodes = [];
+          while (walker.nextNode()) textNodes.push(walker.currentNode);
+          textNodes.forEach(node => {
+            const trimmed = node.textContent.trim();
+            if (isJP && translations[trimmed]) {
+              node._original = trimmed;
+              node.textContent = node.textContent.replace(trimmed, translations[trimmed]);
+            } else if (!isJP && node._original) {
+              node.textContent = node.textContent.replace(node.textContent.trim(), node._original);
+            }
+          });
+
+          localStorage.setItem('portfolio_lang', isJP ? 'jp' : 'en');
+        });
+
+        if (localStorage.getItem('portfolio_lang') === 'jp') toggle.click();
+      })();
+    </script>
+</body>
+</html>
