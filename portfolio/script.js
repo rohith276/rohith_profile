@@ -110,8 +110,13 @@ const projectsData = [
         ],
         liveLink: 'https://bicopilot.vercel.app/',
         gallery: [
+            'images/after_drag_click_get_started_1782922327722.png',
+            'images/after_get_started_1782922296748.png',
+            'images/after_history_click_1782922316236.png',
+            'images/after_seeding_datasets_1782922346802.png',
+            'images/after_settings_click_1782922404690.png',
             'images/after_theme_toggle_1782922396083.png',
-            'images/history_section_1782922286365.png',
+            'images/bicopilot_explore_1782922194288.webp',
             'images/bicopilot-section1.png',
             'images/bicopilot-full.png'
         ]
@@ -134,11 +139,20 @@ const projectsData = [
         liveLink: 'https://acadsify-demo.vercel.app/',
         gallery: [
             'images/acadsify_explore_1782921688779.webp',
+            'images/acadsify_admin_analytics_1782922051953.png',
             'images/acadsify_admin_dashboard_1782921989438.png',
-            'images/acadsify_faculty_dashboard_1782922095634.png',
-            'images/acadsify_student_kanban_1782922148735.png',
+            'images/acadsify_admin_evaluations_1782922044513.png',
+            'images/acadsify_admin_faculty_1782922002783.png',
             'images/acadsify_admin_projects_1782922031478.png',
             'images/acadsify_admin_students_1782922038816.png',
+            'images/acadsify_faculty_dashboard_1782922095634.png',
+            'images/acadsify_faculty_requests_1782922107987.png',
+            'images/acadsify_faculty_team_chats_1782922113793.png',
+            'images/acadsify_faculty_timetable_1782922101253.png',
+            'images/acadsify_student_dashboard_1782922144663.png',
+            'images/acadsify_student_faculty_profiles_1782922173686.png',
+            'images/acadsify_student_kanban_1782922148735.png',
+            'images/acadsify_student_milestones_1782922160286.png',
             'images/acadsify-full.png'
         ]
     },
@@ -160,7 +174,11 @@ const projectsData = [
         gallery: [
             'images/courtsync_explore_1782921464970.webp',
             'images/courtsync_booking_1782921516140.png',
+            'images/courtsync_booking_scrolled_1782921523509.png',
             'images/courtsync_cafe_1782921534538.png',
+            'images/courtsync_cafe_footer_scrolled_1782921567045.png',
+            'images/courtsync_cafe_scrolled_1782921539314.png',
+            'images/courtsync_cafe_takeaway_1782921550201.png',
             'images/courtsync_dashboard_1782921575772.png',
             'images/courtsync-full.png'
         ]
@@ -187,6 +205,7 @@ const projectsData = [
             'images/father_cart_page_1782922711371.png',
             'images/father_checkout_1782922732098.png',
             'images/father_order_history_1782922750782.png',
+            'images/father_menu_empty_1782922520941.png',
             'images/fatherapp-full.png'
         ]
     },
@@ -306,9 +325,11 @@ function openModal(projectId) {
     mFeatures.innerHTML = project.features.map(f => `<li>${f}</li>`).join('');
     
     if (project.gallery && project.gallery.length > 0) {
+        currentGallery = project.gallery;
         mGalleryWrapper.style.display = 'block';
-        mGallery.innerHTML = project.gallery.map(img => `<img src="${img}" alt="Gallery image">`).join('');
+        mGallery.innerHTML = project.gallery.map((img, idx) => `<img src="${img}" alt="Gallery image" style="cursor: zoom-in;" onclick="openLightbox(${idx})">`).join('');
     } else {
+        currentGallery = [];
         mGalleryWrapper.style.display = 'none';
     }
     
@@ -331,16 +352,74 @@ modal.addEventListener('click', (e) => {
     }
 });
 
-// Close on Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-    }
-});
+// Unified Keydown Listener is at the bottom
 
 // Attach openModal to featured projects buttons
 document.querySelectorAll('.view-project-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
         openModal(e.target.getAttribute('data-id'));
     });
+});
+
+/* ── Lightbox Logic ── */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImage');
+const lightboxClose = document.getElementById('lightboxClose');
+const lightboxPrev = document.getElementById('lightboxPrev');
+const lightboxNext = document.getElementById('lightboxNext');
+const lightboxCounter = document.getElementById('lightboxCounter');
+
+let currentGallery = [];
+let currentImageIndex = 0;
+
+function openLightbox(index) {
+    currentImageIndex = index;
+    updateLightbox();
+    lightbox.classList.add('active');
+}
+
+function closeLightbox() {
+    lightbox.classList.remove('active');
+}
+
+function updateLightbox() {
+    if (currentGallery.length === 0) return;
+    lightboxImg.src = currentGallery[currentImageIndex];
+    lightboxCounter.textContent = `${currentImageIndex + 1} / ${currentGallery.length}`;
+}
+
+function nextImage() {
+    if (currentGallery.length === 0) return;
+    currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+    updateLightbox();
+}
+
+function prevImage() {
+    if (currentGallery.length === 0) return;
+    currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+    updateLightbox();
+}
+
+if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+if (lightboxNext) lightboxNext.addEventListener('click', nextImage);
+if (lightboxPrev) lightboxPrev.addEventListener('click', prevImage);
+
+// Close lightbox on background click
+if (lightbox) {
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+            closeLightbox();
+        }
+    });
+}
+
+// Unified Keyboard Navigation (Lightbox & Modal)
+document.addEventListener('keydown', (e) => {
+    if (lightbox && lightbox.classList.contains('active')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowRight') nextImage();
+        if (e.key === 'ArrowLeft') prevImage();
+    } else if (modal && modal.classList.contains('active')) {
+        if (e.key === 'Escape') closeModal();
+    }
 });
