@@ -161,7 +161,7 @@ const projectsData = [
         title: 'KortSync Platform',
         type: 'Sports Facility Management',
         category: 'fullstack',
-        image: 'images/kortsync-home.png',
+        image: 'images/courtsync-home.png',
         shortDesc: 'A comprehensive platform for sports facility management, booking, and on-site dining.',
         fullDesc: 'KortSync offers a unified experience for sports enthusiasts. It allows users to book badminton courts and cricket pitches in real-time, order food from the in-house cafe, and manage their memberships, all through a sleek dark-themed interface.',
         tech: ['Next.js', 'Prisma', 'Tailwind', 'PostgreSQL'],
