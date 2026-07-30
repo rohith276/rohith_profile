@@ -63,7 +63,7 @@ const startCounters = () => {
         const target = +counter.getAttribute('data-target');
         const duration = 2000; // ms
         const increment = target / (duration / 16); // 60fps
-        
+
         let current = 0;
         const updateCounter = () => {
             current += increment;
@@ -157,13 +157,13 @@ const projectsData = [
         ]
     },
     {
-        id: 'courtsync',
-        title: 'CourtSync Platform',
+        id: 'kortsync',
+        title: 'KortSync Platform',
         type: 'Sports Facility Management',
         category: 'fullstack',
-        image: 'images/courtsync-home.png',
+        image: 'images/kortsync-home.png',
         shortDesc: 'A comprehensive platform for sports facility management, booking, and on-site dining.',
-        fullDesc: 'CourtSync offers a unified experience for sports enthusiasts. It allows users to book badminton courts and cricket pitches in real-time, order food from the in-house cafe, and manage their memberships, all through a sleek dark-themed interface.',
+        fullDesc: 'KortSync offers a unified experience for sports enthusiasts. It allows users to book badminton courts and cricket pitches in real-time, order food from the in-house cafe, and manage their memberships, all through a sleek dark-themed interface.',
         tech: ['Next.js', 'Prisma', 'Tailwind', 'PostgreSQL'],
         features: [
             'Real-time court availability and booking engine',
@@ -172,15 +172,15 @@ const projectsData = [
             'Sleek, highly responsive UI with GSAP/Framer Motion animations'
         ],
         gallery: [
-            'images/courtsync_explore_1782921464970.webp',
-            'images/courtsync_booking_1782921516140.png',
-            'images/courtsync_booking_scrolled_1782921523509.png',
-            'images/courtsync_cafe_1782921534538.png',
-            'images/courtsync_cafe_footer_scrolled_1782921567045.png',
-            'images/courtsync_cafe_scrolled_1782921539314.png',
-            'images/courtsync_cafe_takeaway_1782921550201.png',
-            'images/courtsync_dashboard_1782921575772.png',
-            'images/courtsync-full.png'
+            'images/kortsync_explore_1782921464970.webp',
+            'images/kortsync_booking_1782921516140.png',
+            'images/kortsync_booking_scrolled_1782921523509.png',
+            'images/kortsync_cafe_1782921534538.png',
+            'images/kortsync_cafe_footer_scrolled_1782921567045.png',
+            'images/kortsync_cafe_scrolled_1782921539314.png',
+            'images/kortsync_cafe_takeaway_1782921550201.png',
+            'images/kortsync_dashboard_1782921575772.png',
+            'images/kortsync-full.png'
         ]
     },
     {
@@ -259,15 +259,15 @@ const featuredContainer = document.getElementById('featuredContainer');
 function renderProjects() {
     if (!featuredContainer) return;
     featuredContainer.innerHTML = '';
-    
+
     projectsData.forEach((project, index) => {
         // The CSS relies on :nth-child(even) to reverse the layout!
         const card = document.createElement('div');
         card.className = 'featured-project reveal';
         card.style.animationDelay = `${Math.random() * 0.3}s`;
-        
-        let liveLinkBtn = project.liveLink 
-            ? `<a href="${project.liveLink}" target="_blank" class="btn btn-primary" style="margin-left: 10px;" onclick="event.stopPropagation()">Live Preview</a>` 
+
+        let liveLinkBtn = project.liveLink
+            ? `<a href="${project.liveLink}" target="_blank" class="btn btn-primary" style="margin-left: 10px;" onclick="event.stopPropagation()">Live Preview</a>`
             : '';
 
         card.innerHTML = `
@@ -287,7 +287,7 @@ function renderProjects() {
                 </div>
             </div>
         `;
-        
+
         featuredContainer.appendChild(card);
         // Trigger reveal manually for dynamically added items
         setTimeout(() => card.classList.add('revealed'), 50);
@@ -314,16 +314,16 @@ const mGalleryWrapper = document.getElementById('modalGalleryWrapper');
 function openModal(projectId) {
     const project = projectsData.find(p => p.id === projectId);
     if (!project) return;
-    
+
     // Populate data
     mImage.src = project.image;
     mType.textContent = project.type;
     mTitle.textContent = project.title;
     mDesc.textContent = project.fullDesc;
-    
+
     mTech.innerHTML = project.tech.map(t => `<span class="tech-tag">${t}</span>`).join('');
     mFeatures.innerHTML = project.features.map(f => `<li>${f}</li>`).join('');
-    
+
     if (project.gallery && project.gallery.length > 0) {
         currentGallery = project.gallery;
         mGalleryWrapper.style.display = 'block';
@@ -332,7 +332,7 @@ function openModal(projectId) {
         currentGallery = [];
         mGalleryWrapper.style.display = 'none';
     }
-    
+
     // Show modal
     modal.classList.add('active');
     document.body.style.overflow = 'hidden'; // Prevent background scrolling
