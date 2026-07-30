@@ -171,16 +171,17 @@ const projectsData = [
             'Secure authentication and role-based dashboards',
             'Sleek, highly responsive UI with GSAP/Framer Motion animations'
         ],
+        liveLink: 'https://kortsync.vercel.app/',
         gallery: [
-            'images/kortsync_explore_1782921464970.webp',
-            'images/kortsync_booking_1782921516140.png',
-            'images/kortsync_booking_scrolled_1782921523509.png',
-            'images/kortsync_cafe_1782921534538.png',
-            'images/kortsync_cafe_footer_scrolled_1782921567045.png',
-            'images/kortsync_cafe_scrolled_1782921539314.png',
-            'images/kortsync_cafe_takeaway_1782921550201.png',
-            'images/kortsync_dashboard_1782921575772.png',
-            'images/kortsync-full.png'
+            'images/courtsync_explore_1782921464970.webp',
+            'images/courtsync_booking_1782921516140.png',
+            'images/courtsync_booking_scrolled_1782921523509.png',
+            'images/courtsync_cafe_1782921534538.png',
+            'images/courtsync_cafe_footer_scrolled_1782921567045.png',
+            'images/courtsync_cafe_scrolled_1782921539314.png',
+            'images/courtsync_cafe_takeaway_1782921550201.png',
+            'images/courtsync_dashboard_1782921575772.png',
+            'images/courtsync-full.png'
         ]
     },
     {
